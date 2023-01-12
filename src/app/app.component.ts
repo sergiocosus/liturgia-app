@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import {MassPart} from "./classes/mass-part";
+import {MassService} from "./classes/mass-service";
+import {MassRoleType} from "./classes/mass-role-type";
+import {MassRole} from "./classes/mass-role";
 
 @Component({
   selector: 'app-root',
@@ -7,12 +11,23 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'liturgia-app';
-  massParts = [
+  massParts: MassPart[] = [
     {
       name: 'Rito de entrada',
       parts: [
         {
           name: 'Procesión de entrada',
+          massServices: [
+            new MassService(MassRole.roles.ceremonialist, "Va al frente de la proseción"),
+            new MassService(MassRole.roles.thuriferary, ""),
+            new MassService(MassRole.roles.shuttle, ""),
+            new MassService(MassRole.roles.highCross, ""),
+            new MassService(MassRole.roles.candlestick, ""),
+            new MassService(MassRole.roles.acolyte, ""),
+            new MassService(MassRole.roles.book, ""),
+            new MassService(MassRole.roles.miter, ""),
+            new MassService(MassRole.roles.crosier, ""),
+          ]
         },
         {
           name: 'Saludo inicial',

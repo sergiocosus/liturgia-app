@@ -15,7 +15,11 @@
           {{massPart.name}}
         </mat-panel-title>
         <mat-panel-description>
-          This is a summary of the content
+          <span *ngFor="let massService of massPart.massServices">
+            {{massService.massRole.name}}
+            <br>
+            {{massService.description}}
+          </span>
         </mat-panel-description>
       </mat-expansion-panel-header>
       <mat-expansion-panel *ngFor="let massPart of massPart.parts">
