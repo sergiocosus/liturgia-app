@@ -1,5 +1,24 @@
-<mat-accordion>
-  <mat-expansion-panel *ngFor="let massPart of massParts">
+<div [formGroup]="filterForm">
+  <mat-form-field >
+    <mat-label>Tipo de misa</mat-label>
+    <mat-select formControlName="type">
+      <mat-option *ngFor="let massType of massTypes" [value]="massType">
+        {{massType}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Rol</mat-label>
+    <mat-select formControlName="role">
+      <mat-option *ngFor="let massRole of massRoles" [value]="massRole">
+        {{massRole.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+
+<mat-accordion multi>
+  <mat-expansion-panel *ngFor="let massPart of massParts" [expanded]="true">
     <mat-expansion-panel-header>
       <mat-panel-title>
         {{massPart.name}}
@@ -9,7 +28,7 @@
       </mat-panel-description>
     </mat-expansion-panel-header>
 
-    <mat-expansion-panel *ngFor="let massPart of massPart.parts">
+    <mat-expansion-panel *ngFor="let massPart of massPart.parts" [expanded]="true">
       <mat-expansion-panel-header>
         <mat-panel-title>
           {{massPart.name}}
@@ -28,12 +47,11 @@
             {{massPart.name}}
           </mat-panel-title>
           <mat-panel-description>
-            This is a summary of the content
           </mat-panel-description>
         </mat-expansion-panel-header>
-        <p>This is the primary content of the panel.</p>
-      </mat-expansion-panel>    </mat-expansion-panel>
 
+      </mat-expansion-panel>
+    </mat-expansion-panel>
   </mat-expansion-panel>
 </mat-accordion>
 <router-outlet></router-outlet>
