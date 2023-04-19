@@ -1,0 +1,14 @@
+:host {
+  display: flex;
+  border-bottom: 1px solid gray;
+}
+
+.role-name {
+  flex: 1;
+  font-weight: bold;
+  margin-right: .25em;
+}
+
+.description {
+  flex: 5;
+}
