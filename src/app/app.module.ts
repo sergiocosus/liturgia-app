@@ -8,19 +8,23 @@ import {MatExpansionModule} from "@angular/material/expansion";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatSelectModule} from "@angular/material/select";
 import {ReactiveFormsModule} from "@angular/forms";
+import {MatToolbarModule} from "@angular/material/toolbar";
+import {CoreModule} from "./core/core.module";
+import {SharedModule} from "./shared/shared.module";
+import { MassServiceIconComponent } from './components/mass-service-icon/mass-service-icon.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MassServiceIconComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatExpansionModule,
-    MatFormFieldModule,
-    MatSelectModule,
     ReactiveFormsModule,
+    CoreModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

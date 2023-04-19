@@ -3,24 +3,74 @@ import {MassType} from "./mass-type";
 export class MassRole {
   name: string = '';
   massType: string[] = [];
+  icon?: string = '';
 
-  constructor(name: string, massType: string[]) {
+  constructor(name: string, massType: string[], icon?: string) {
     this.name = name;
     this.massType = massType;
+    this.icon = icon;
   }
 
   static roles = {
-    acolyte: new MassRole('Acólito', [MassType.any]),
-    book: new MassRole('Libro', [MassType.any]),
-    highCross: new MassRole('Cruz Alta', [MassType.solemn, MassType.pontifical]),
-    candlestick: new MassRole('Cirial', [MassType.solemn, MassType.pontifical]),
-    thuriferary: new MassRole('Turiferario', [MassType.solemn, MassType.pontifical]),
-    shuttle: new MassRole('Naveta', [MassType.solemn, MassType.pontifical]),
-    crosier: new MassRole('Báculo', [MassType.pontifical]),
-    miter: new MassRole('Naveta', [MassType.pontifical]),
-    ceremonialist: new MassRole('Ceremoniero', [MassType.solemn, MassType.pontifical]),
-    familiar: new MassRole('Familiar', [MassType.solemn, MassType.pontifical]),
-    priest: new MassRole('Sacerdote', [MassType.any]),
-    bishop: new MassRole('Obispo', [MassType.pontifical]),
+    acolyte: new MassRole(
+      'Acólito',
+      [MassType.any],
+      'acolyte.png'
+    ),
+    book: new MassRole(
+      'Libro',
+      [MassType.any],
+      'book.png'
+    ),
+    highCross: new MassRole(
+      'Cruz Alta',
+      [MassType.solemn, MassType.pontifical],
+      'highCross.png'
+    ),
+    candlestick: new MassRole(
+      'Cirial',
+      [MassType.solemn, MassType.pontifical],
+      'candlestick.png'
+    ),
+    thuriferary: new MassRole(
+      'Turiferario',
+      [MassType.solemn, MassType.pontifical],
+      'thuriferary.png'
+    ),
+    shuttle: new MassRole(
+      'Naveta',
+      [MassType.solemn, MassType.pontifical],
+      'shuttle.png'
+    ),
+    crosier: new MassRole(
+      'Báculo',
+      [MassType.pontifical],
+      'crosier.png'
+    ),
+    miter: new MassRole(
+      'Naveta',
+      [MassType.pontifical],
+      'miter.png'
+    ),
+    ceremonialist: new MassRole(
+      'Ceremoniero',
+      [MassType.solemn, MassType.pontifical],
+      'ceremonialist.png'
+    ),
+    familiar: new MassRole(
+      'Familiar',
+      [MassType.solemn, MassType.pontifical],
+      'familiar.png'
+    ),
+    priest: new MassRole(
+      'Sacerdote',
+      [MassType.any],
+      'priest.png'
+    ),
+    bishop: new MassRole(
+      'Obispo',
+      [MassType.pontifical],
+      'bishop.png'
+    ),
   }
 }

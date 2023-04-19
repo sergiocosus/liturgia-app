@@ -16,23 +16,9 @@ export class AppComponent {
   title = 'liturgia-app';
 
 
-  massTypes: MassType[] = [
-    MassType.any,
-    MassType.solemn,
-    MassType.pontifical,
-  ];
-
-  massRoles = Object.values(MassRole.roles);
-
-  massParts: MassPart[] = MassStructure;
-  filterForm: FormGroup;
 
 
   constructor(fb: FormBuilder) {
-    this.filterForm = fb.group({
-      'role' : [],
-      'type' : [],
-    })
-    console.log(this.filterForm);
+
   }
 }

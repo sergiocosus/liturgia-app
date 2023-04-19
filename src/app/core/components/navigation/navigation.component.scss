@@ -1,0 +1,89 @@
+@import "src/variables";
+
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 200px;
+  color: white;
+  background: $primary;
+
+  mat-toolbar {
+    display: flex;
+    justify-content: center;
+    margin-top: .5em;
+  }
+
+  mat-toolbar {
+    background-color: transparent;
+  }
+
+  .page-icon {
+    width: 3em;
+  }
+
+  img {
+    width: 1em;
+  }
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.active {
+  background-color: darken($secondary, 30%) !important;
+}
+
+mat-sidenav-content {
+  display: flex;
+  flex-direction: column;
+}
+
+app-nav-pages ::ng-deep a {
+  mat-icon {
+    margin-right: .25em;
+  }
+}
+
+.top-bar {
+  app-nav-pages {
+    display: flex;
+
+    ::ng-deep a {
+      margin-right: 1em;
+
+      .mat-list-item-content {
+        display: flex;
+        align-items: center;
+
+        mat-icon {
+          margin-right: .1em;
+        }
+      }
+    }
+  }
+}
+
+.title {
+  white-space: pre-wrap;
+  line-height: 1em;
+  text-align: center;
+
+  &.long-text {
+    font-size: .75em;
+
+    @media (min-width: $smWidth) {
+      font-size: 1em;
+    }
+  }
+}
