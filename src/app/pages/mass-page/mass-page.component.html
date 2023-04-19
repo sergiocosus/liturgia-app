@@ -13,62 +13,72 @@
       <mat-option *ngFor="let massRole of massRoles" [value]="massRole">
         {{massRole.name}}
       </mat-option>
+      <mat-option [value]="null">
+        NA
+      </mat-option>
     </mat-select>
   </mat-form-field>
 </div>
 
 <mat-accordion multi>
-  <mat-expansion-panel *ngFor="let massPart of massParts" [expanded]="true">
-    <mat-expansion-panel-header>
-      <mat-panel-title>
-        {{massPart.name}}
-      </mat-panel-title>
-      <mat-panel-description>
-        {{massPart.description}}
+  <ng-container *ngFor="let massPart of massParts">
 
-        <mat-icon *ngFor="let massService of massPart.massServices">
-          account_circle
-        </mat-icon>
-      </mat-panel-description>
-    </mat-expansion-panel-header>
-
-    <mat-expansion-panel *ngFor="let massPart of massPart.parts"
-                         [expanded]="massPart.parts?.length"
-                         [disabled]="!massPart.massServices?.length">
+    <mat-expansion-panel *ngIf="hasMassServices(massPart)" [expanded]="true">
       <mat-expansion-panel-header>
         <mat-panel-title>
           {{massPart.name}}
         </mat-panel-title>
         <mat-panel-description>
           {{massPart.description}}
-
-          <app-mass-service-icon
-            *ngFor="let massService of massPart.massServices"
-            [massService]="massService"></app-mass-service-icon>
         </mat-panel-description>
       </mat-expansion-panel-header>
 
-      <h3 *ngIf="massPart.massServices?.length">Servicios</h3>
-      <app-mass-service *ngFor="let massService of massPart.massServices"
-                        [massService]="massService"></app-mass-service>
+      <ng-container *ngFor="let massPart of massPart.parts">
+        <mat-expansion-panel *ngIf="hasMassServices(massPart)"
+                             [expanded]="massPart.parts?.length"
+                             [disabled]="!massPart.massServices?.length">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              {{massPart.name}}
+            </mat-panel-title>
+            <mat-panel-description>
+              {{massPart.description}}
 
-      <mat-expansion-panel *ngFor="let massPart of massPart.parts"
-                           [expanded]="massPart.parts?.length"
-                           [disabled]="!massPart.massServices?.length">
-        <mat-expansion-panel-header>
-          <mat-panel-title>
-            {{massPart.name}}
-          </mat-panel-title>
-          <mat-panel-description>
-            {{massPart.description}}
-          </mat-panel-description>
-        </mat-expansion-panel-header>
+              <app-mass-service-icon
+                *ngFor="let massService of massPart.massServices"
+                [massService]="massService"></app-mass-service-icon>
+            </mat-panel-description>
+          </mat-expansion-panel-header>
 
-        <app-mass-service *ngFor="let massService of massPart.massServices"
-                          [massService]="massService"></app-mass-service>
+          <h3 *ngIf="massPart.massServices?.length">Servicios</h3>
+          <app-mass-service *ngFor="let massService of massPart.massServices"
+                            [massService]="massService"></app-mass-service>
 
-      </mat-expansion-panel>
+          <ng-container *ngFor="let massPart of massPart.parts">
+            <mat-expansion-panel *ngIf="hasMassServices(massPart)"
+                                 [expanded]="massPart.parts?.length"
+                                 [disabled]="!massPart.massServices?.length">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  {{massPart.name}}
+                </mat-panel-title>
+                <mat-panel-description>
+                  {{massPart.description}}
+                </mat-panel-description>
+                <app-mass-service-icon
+                  *ngFor="let massService of massPart.massServices"
+                  [massService]="massService"></app-mass-service-icon>
+              </mat-expansion-panel-header>
+
+              <h3 *ngIf="massPart.massServices?.length">Servicios</h3>
+              <app-mass-service *ngFor="let massService of massPart.massServices"
+                                [massService]="massService"></app-mass-service>
+
+            </mat-expansion-panel>
+          </ng-container>
+        </mat-expansion-panel>
+      </ng-container>
     </mat-expansion-panel>
-  </mat-expansion-panel>
+  </ng-container>
 </mat-accordion>
 <router-outlet></router-outlet>

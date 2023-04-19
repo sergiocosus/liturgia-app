@@ -48,7 +48,7 @@ export class MassRole {
       'crosier.png'
     ),
     miter: new MassRole(
-      'Naveta',
+      'Mitra',
       [MassType.pontifical],
       'miter.png'
     ),

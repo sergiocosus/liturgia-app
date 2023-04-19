@@ -31,7 +31,29 @@ export class MassPageComponent {
     this.filterForm = fb.group({
       'role' : [],
       'type' : [],
-    })
-    console.log(this.filterForm);
+    });
+   /* this.filterForm.get("role")?.valueChanges.subscribe(value =>{
+      this.massParts = MassStructure.clon.filter(massPart => {
+        if (value) {
+          return massPart.parts.filter(
+            massPart2 => this.hasMassServices(massPart2, value)
+          );
+        } else {
+          return MassStructure;
+        }
+      });
+      console.log(this.massParts);
+    })*/
+  }
+
+  hasMassServices(massPart: MassPart): boolean {
+    const selectedRole = this.filterForm.get('role')?.value;
+    if (!selectedRole) {
+      return true;
+    }
+
+    return !!massPart.massServices?.find(massService =>
+      massService.massRole.name == selectedRole.name
+    ) || !!massPart.parts?.find(part => this.hasMassServices(part));
   }
 }
