@@ -53,8 +53,6 @@ import {MatToolbarModule} from "@angular/material/toolbar";
     MatSnackBarModule,
     MatTooltipModule,
     MatSelectModule,
-  ],
-  entryComponents: [
   ]
 })
 export class SharedModule {

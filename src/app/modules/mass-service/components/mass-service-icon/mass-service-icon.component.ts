@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {MassService} from "../../../../classes/mass-service";
+import {MassRole} from "../../../../classes/mass-role";
 
 @Component({
   selector: 'app-mass-service-icon',
@@ -7,5 +7,5 @@ import {MassService} from "../../../../classes/mass-service";
   styleUrls: ['./mass-service-icon.component.scss']
 })
 export class MassServiceIconComponent {
-  @Input() massService!: MassService;
+  @Input() massRole!: MassRole;
 }

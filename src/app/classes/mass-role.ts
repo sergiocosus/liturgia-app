@@ -62,6 +62,16 @@ export class MassRole {
       [MassType.solemn, MassType.pontifical],
       'familiar.png'
     ),
+    deacon: new MassRole(
+      'Diácono',
+      [MassType.any],
+      'priest.png'
+    ),
+    evangelistary: new MassRole(
+      'Evangeliario',
+      [MassType.any],
+      'priest.png'
+    ),
     priest: new MassRole(
       'Sacerdote',
       [MassType.any],
@@ -71,6 +81,26 @@ export class MassRole {
       'Obispo',
       [MassType.pontifical],
       'bishop.png'
+    ),
+    monitor: new MassRole(
+      'Monitor',
+      [MassType.any],
+      'monitor.svg'
+    ),
+    reading1: new MassRole(
+      'Primera Lectura',
+      [MassType.any],
+      'reader1.svg'
+    ),
+    reading2: new MassRole(
+      'Segunda Lectura',
+      [MassType.any],
+      'reader2.svg'
+    ),
+    psalm: new MassRole(
+      'Salmo',
+      [MassType.any],
+      'psalm.svg'
     ),
   }
 }

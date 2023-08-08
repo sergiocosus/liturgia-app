@@ -38,6 +38,8 @@
   display: flex;
   flex-direction: column;
   flex: 1;
+  max-width: $lgWidth;
+  align-content: center;
 }
 
 .active {
@@ -47,6 +49,7 @@
 mat-sidenav-content {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 app-nav-pages ::ng-deep a {

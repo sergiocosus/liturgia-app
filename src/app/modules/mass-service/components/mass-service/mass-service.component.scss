@@ -1,6 +1,9 @@
+@import '../../../../../variables';
+
 :host {
   display: flex;
-  border-bottom: 1px solid gray;
+  flex-direction: column;
+  border-bottom: 1px solid rgba($gray, .5);
 }
 
 .role-name {

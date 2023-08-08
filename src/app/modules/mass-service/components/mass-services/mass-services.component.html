@@ -1,0 +1,5 @@
+<div class="mass-service">
+  <h3 *ngIf="massServices?.length">Servicios</h3>
+  <app-mass-service *ngFor="let massService of massServices"
+                    [massService]="massService"></app-mass-service>
+</div>

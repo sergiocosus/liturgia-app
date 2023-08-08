@@ -26,20 +26,34 @@ export let MassStructure = [
           new MassService(MassRole.roles.book, ""),
           new MassService(MassRole.roles.miter, ""),
           new MassService(MassRole.roles.crosier, ""),
+        ],
+        processionOrder: [
+          [new MassRole('', []), MassRole.roles.ceremonialist],
+          [MassRole.roles.thuriferary, MassRole.roles.shuttle],
+          [MassRole.roles.highCross],
+          [MassRole.roles.candlestick, MassRole.roles.candlestick],
+          [MassRole.roles.reading1, MassRole.roles.reading2],
+          [MassRole.roles.psalm],
+          [MassRole.roles.acolyte],
+          [MassRole.roles.deacon],
+          [MassRole.roles.evangelistary],
+          [MassRole.roles.priest],
+          [MassRole.roles.bishop, MassRole.roles.deacon],
+          [MassRole.roles.crosier, MassRole.roles.miter]
         ]
       },
       {
         name: 'Saludo inicial',
         description: '"Con este saludo y con al respuesta del pueblo fiel, queda de manifiesto el misterio de la Iglesia congregada" (Ibid., n. 28)',
         massServices: [
-          new MassService(MassRole.roles.book, ""),
+          new MassService(MassRole.roles.book, "Colocar el libro en la página de los ritos iniciales"),
         ]
       },
       {
         name: 'Acto penitencial',
         description: '"Un momento de silencio, Vemos clara nuestra indignidad. Viene a la cabeza el recuerdo -no vago y genérico- de lso pecados y faltas en concreto" (Arce Gargollo, 2010)',
         massServices: [
-          new MassService(MassRole.roles.book, ""),
+          new MassService(MassRole.roles.book, "Al terminar el acto penitencial, se retira"),
         ]
       },
       {
@@ -54,7 +68,7 @@ export let MassStructure = [
         name: 'Oración colecta',
         description: '"Permanecen un rato de silencio para hacerse concientes de estar en la presencia de Dios y formular interiormente sus súplicas"  (I.G.M.R., n.32)  \n "Al decir "oremos" se nos invita a pedir" (Arce Gargollo, 2010)',
         massServices: [
-          new MassService(MassRole.roles.book, ""),
+          new MassService(MassRole.roles.book, "Presenta el misal en la oración colecta correspondiente"),
         ]
       },
     ]
@@ -92,7 +106,7 @@ export let MassStructure = [
       {
         name: 'Evangelio',
         massServices: [
-          new MassService(MassRole.roles.candlestick, ""),
+          new MassService(MassRole.roles.candlestick, "Se mantienen "),
           new MassService(MassRole.roles.thuriferary, ""),
           new MassService(MassRole.roles.miter,
             "Una vez que besó el evangeliario se le da la mitra."
