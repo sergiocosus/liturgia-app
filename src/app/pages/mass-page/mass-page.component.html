@@ -42,11 +42,14 @@
               {{massPart.name}}
             </mat-panel-title>
             <mat-panel-description>
-              {{massPart.description}}
-
-              <app-mass-service-icon
-                *ngFor="let massService of massPart.massServices"
-                [massRole]="massService.massRole"></app-mass-service-icon>
+              <div class="description">
+                {{massPart.description}}
+              </div>
+              <div class="icons">
+                <app-mass-service-icon
+                  *ngFor="let massService of massPart.massServices"
+                  [massRole]="massService.massRole"></app-mass-service-icon>
+              </div>
             </mat-panel-description>
           </mat-expansion-panel-header>
 

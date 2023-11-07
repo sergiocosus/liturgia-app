@@ -15,3 +15,17 @@ h3 {
   flex-direction: row;
 }
 
+.description {
+  flex: 2;
+}
+
+.icons {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  flex-wrap: wrap;
+}
+
+mat-panel-title {
+  font-weight: 500;
+}
