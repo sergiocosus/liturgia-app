@@ -19,6 +19,10 @@ const routes: Routes = [
         path: 'liturgical-objects',
         loadChildren: () => import('./pages/liturgical-objects-page/liturgical-objects-page.module').then(m => m.LiturgicalObjectsPageModule)
       },
+      {
+        path: 'biblical-timeline',
+        loadChildren: () => import('./pages/biblical-timeline-page/biblical-timeline-page.module').then(m => m.BiblicalTimelinePageModule)
+      },
     ]
   }
 ];

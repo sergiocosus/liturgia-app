@@ -1,0 +1,28 @@
+p-card ::ng-deep {
+  .p-card{
+    margin-bottom: 1em;
+
+  }
+  .p-card-title {
+    margin-bottom: 0;
+  }
+  .p-card-content {
+    display: flex;
+    align-items: center;
+    padding: .1em 0;
+  }
+}
+
+.text {
+  padding: .25em;
+}
+
+.opposite-image {
+  border-radius:.2em;
+  box-shadow: 10px 5px 5px rgba(black, .25);
+  margin-bottom: 1em;
+}
+
+h1 {
+  text-align: center;
+}

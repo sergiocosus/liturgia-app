@@ -1,0 +1,24 @@
+<div class="card">
+  <h1>
+    Linea del tiempo bíblica del Antiguo Testamento
+  </h1>
+
+  <p-timeline [value]="events" align="alternate" styleClass="customized-timeline">
+    <ng-template pTemplate="marker" let-event>
+        <span class="custom-marker shadow-2" [style.color]="event.color">
+            <i [ngClass]="event.icon"></i>
+        </span>
+    </ng-template>
+    <ng-template pTemplate="opposite" let-event>
+      <img class="opposite-image" *ngIf="event.image" [src]="event.image" [alt]="event.name" height="125" />
+
+    </ng-template>
+    <ng-template pTemplate="content" let-event>
+      <p-card [header]="event.status" [subheader]="event.date">
+        <div class="text" [innerHTML]="event.content">
+        </div>
+        <!--<button pButton label="Read more" class="p-button-text"></button>-->
+      </p-card>
+    </ng-template>
+  </p-timeline>
+</div>
