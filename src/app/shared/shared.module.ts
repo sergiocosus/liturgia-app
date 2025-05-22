@@ -1,10 +1,10 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 
-import { RouterModule } from '@angular/router';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {RouterModule} from '@angular/router';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
-import { MatSelectModule } from '@angular/material/select';
+import {MatSelectModule} from '@angular/material/select';
 import {MatButtonModule} from "@angular/material/button";
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 import {MatDialogModule} from "@angular/material/dialog";
@@ -21,9 +21,7 @@ import {MatInputModule} from "@angular/material/input";
 import {MatToolbarModule} from "@angular/material/toolbar";
 
 @NgModule({
-  declarations: [
-
-  ],
+  declarations: [],
   imports: [
     CommonModule,
     MatButtonModule,

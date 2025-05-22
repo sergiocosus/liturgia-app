@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { MassProcessionComponent } from './mass-procession.component';
+import {MassProcessionComponent} from './mass-procession.component';
 
 describe('MassProcessionComponent', () => {
   let component: MassProcessionComponent;

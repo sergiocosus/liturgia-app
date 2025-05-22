@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { LiturgicalObjectsPageComponent } from './liturgical-objects-page.component';
+import {LiturgicalObjectsPageComponent} from './liturgical-objects-page.component';
 
 describe('LiturgicalObjectsPageComponent', () => {
   let component: LiturgicalObjectsPageComponent;

@@ -1,8 +1,8 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 
-import { BiblicalTimelinePageRoutingModule } from './biblical-timeline-page-routing.module';
-import { BiblicalTimelinePageComponent } from './biblical-timeline-page.component';
+import {BiblicalTimelinePageRoutingModule} from './biblical-timeline-page-routing.module';
+import {BiblicalTimelinePageComponent} from './biblical-timeline-page.component';
 import {TimelineModule} from "primeng/timeline";
 import {CardModule} from "primeng/card";
 
@@ -18,4 +18,5 @@ import {CardModule} from "primeng/card";
     BiblicalTimelinePageRoutingModule,
   ]
 })
-export class BiblicalTimelinePageModule { }
+export class BiblicalTimelinePageModule {
+}

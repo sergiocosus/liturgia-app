@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { NavPagesComponent } from './nav-pages.component';
+import {NavPagesComponent} from './nav-pages.component';
 
 describe('NavPagesComponent', () => {
   let component: NavPagesComponent;
@@ -8,9 +8,9 @@ describe('NavPagesComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NavPagesComponent ]
+      declarations: [NavPagesComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

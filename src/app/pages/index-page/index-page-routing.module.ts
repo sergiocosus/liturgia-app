@@ -1,10 +1,10 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
 import {IndexPageComponent} from "./index-page.component";
 
 const routes: Routes = [
   {
-    path:'',
+    path: '',
     component: IndexPageComponent
   }
 ];
@@ -13,4 +13,5 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class IndexPageRoutingModule { }
+export class IndexPageRoutingModule {
+}

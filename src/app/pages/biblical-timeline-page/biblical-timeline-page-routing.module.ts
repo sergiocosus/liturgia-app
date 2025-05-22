@@ -1,10 +1,10 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
 import {BiblicalTimelinePageComponent} from "./biblical-timeline-page.component";
 
 const routes: Routes = [
   {
-    path:'',
+    path: '',
     component: BiblicalTimelinePageComponent
   }
 ];
@@ -13,4 +13,5 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class BiblicalTimelinePageRoutingModule { }
+export class BiblicalTimelinePageRoutingModule {
+}

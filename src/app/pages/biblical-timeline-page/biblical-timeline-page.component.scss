@@ -1,11 +1,13 @@
 p-card ::ng-deep {
-  .p-card{
+  .p-card {
     margin-bottom: 1em;
 
   }
+
   .p-card-title {
     margin-bottom: 0;
   }
+
   .p-card-content {
     display: flex;
     align-items: center;
@@ -18,11 +20,17 @@ p-card ::ng-deep {
 }
 
 .opposite-image {
-  border-radius:.2em;
+  border-radius: .2em;
   box-shadow: 10px 5px 5px rgba(black, .25);
   margin-bottom: 1em;
+  max-height: 10em;
 }
 
 h1 {
   text-align: center;
+}
+
+.p-timeline-vertical.p-timeline-alternate .p-timeline-event:nth-child(even) p-card-content {
+text-align: right;
+  float: right;
 }

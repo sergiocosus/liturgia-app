@@ -1,6 +1,5 @@
-
 export enum MassRoleType {
-  acolito= 'Acólito',
+  acolito = 'Acólito',
   libro = "Libro",
   turiferario = "Turiferario (incensario)",
   naveta = "Naveta",

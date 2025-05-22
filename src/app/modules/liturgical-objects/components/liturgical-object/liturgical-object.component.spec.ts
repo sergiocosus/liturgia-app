@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { LiturgicalObjectComponent } from './liturgical-object.component';
+import {LiturgicalObjectComponent} from './liturgical-object.component';
 
 describe('LiturgicalObjectComponent', () => {
   let component: LiturgicalObjectComponent;

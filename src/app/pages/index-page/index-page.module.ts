@@ -1,8 +1,8 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 
-import { IndexPageRoutingModule } from './index-page-routing.module';
-import { IndexPageComponent } from './index-page.component';
+import {IndexPageRoutingModule} from './index-page-routing.module';
+import {IndexPageComponent} from './index-page.component';
 import {MatButtonModule} from "@angular/material/button";
 
 
@@ -16,4 +16,5 @@ import {MatButtonModule} from "@angular/material/button";
     MatButtonModule
   ]
 })
-export class IndexPageModule { }
+export class IndexPageModule {
+}

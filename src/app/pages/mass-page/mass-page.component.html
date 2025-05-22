@@ -3,7 +3,7 @@
     <mat-label>Tipo de misa</mat-label>
     <mat-select formControlName="type">
       <mat-option *ngFor="let massType of massTypes" [value]="massType">
-        {{massType}}
+        {{ massType }}
       </mat-option>
     </mat-select>
   </mat-form-field>
@@ -11,7 +11,7 @@
     <mat-label>Rol</mat-label>
     <mat-select formControlName="role">
       <mat-option *ngFor="let massRole of massRoles" [value]="massRole">
-        {{massRole.name}}
+        {{ massRole.name }}
       </mat-option>
       <mat-option [value]="null">
         NA
@@ -26,10 +26,10 @@
     <mat-expansion-panel *ngIf="hasMassServices(massPart)" [expanded]="true">
       <mat-expansion-panel-header>
         <mat-panel-title>
-          {{massPart.name}}
+          {{ massPart.name }}
         </mat-panel-title>
         <mat-panel-description>
-          {{massPart.description}}
+          {{ massPart.description }}
         </mat-panel-description>
       </mat-expansion-panel-header>
 
@@ -39,11 +39,11 @@
                              [disabled]="!massPart.massServices?.length">
           <mat-expansion-panel-header>
             <mat-panel-title>
-              {{massPart.name}}
+              {{ massPart.name }}
             </mat-panel-title>
             <mat-panel-description>
               <div class="description">
-                {{massPart.description}}
+                {{ massPart.description }}
               </div>
               <div class="icons">
                 <app-mass-service-icon
@@ -68,10 +68,10 @@
                                  [disabled]="!massPart.massServices?.length">
               <mat-expansion-panel-header>
                 <mat-panel-title>
-                  {{massPart.name}}
+                  {{ massPart.name }}
                 </mat-panel-title>
                 <mat-panel-description>
-                  {{massPart.description}}
+                  {{ massPart.description }}
                 </mat-panel-description>
                 <app-mass-service-icon
                   *ngFor="let massService of massPart.massServices"

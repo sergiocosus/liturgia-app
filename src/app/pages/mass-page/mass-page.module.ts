@@ -1,14 +1,14 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 
-import { MassPageRoutingModule } from './mass-page-routing.module';
-import { MassPageComponent } from './mass-page.component';
+import {MassPageRoutingModule} from './mass-page-routing.module';
+import {MassPageComponent} from './mass-page.component';
 import {SharedModule} from "../../shared/shared.module";
 import {MatExpansionModule} from "@angular/material/expansion";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatSelectModule} from "@angular/material/select";
 import {MatToolbarModule} from "@angular/material/toolbar";
-import { MassServiceComponent } from '../../modules/mass-service/components/mass-service/mass-service.component';
+import {MassServiceComponent} from '../../modules/mass-service/components/mass-service/mass-service.component';
 import {MassServiceModule} from "../../modules/mass-service/mass-service.module";
 
 
@@ -16,15 +16,16 @@ import {MassServiceModule} from "../../modules/mass-service/mass-service.module"
   declarations: [
     MassPageComponent,
   ],
-    imports: [
-        CommonModule,
-        SharedModule,
-        MassPageRoutingModule,
-        MatExpansionModule,
-        MatFormFieldModule,
-        MatSelectModule,
-        MatToolbarModule,
-        MassServiceModule,
-    ]
+  imports: [
+    CommonModule,
+    SharedModule,
+    MassPageRoutingModule,
+    MatExpansionModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatToolbarModule,
+    MassServiceModule,
+  ]
 })
-export class MassPageModule { }
+export class MassPageModule {
+}

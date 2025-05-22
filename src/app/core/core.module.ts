@@ -1,6 +1,6 @@
-import { NgModule } from '@angular/core';
-import { NavigationComponent } from './components/navigation/navigation.component';
-import { NavPagesComponent } from './components/nav-pages/nav-pages.component';
+import {NgModule} from '@angular/core';
+import {NavigationComponent} from './components/navigation/navigation.component';
+import {NavPagesComponent} from './components/nav-pages/nav-pages.component';
 import {MatExpansionModule} from "@angular/material/expansion";
 import {SharedModule} from "../shared/shared.module";
 
@@ -17,4 +17,5 @@ import {SharedModule} from "../shared/shared.module";
     NavigationComponent
   ]
 })
-export class CoreModule { }
+export class CoreModule {
+}

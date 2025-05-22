@@ -6,6 +6,7 @@ export class MassService {
     this.massRole = massRole;
     this.description = description;
   }
+
   massRole: MassRole;
   description: string;
 }

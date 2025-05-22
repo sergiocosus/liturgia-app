@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {MassType} from "../../classes/mass-type";
 import {MassRole} from "../../classes/mass-role";
 import {MassPart} from "../../classes/mass-part";
@@ -29,21 +29,21 @@ export class MassPageComponent {
 
   constructor(fb: FormBuilder) {
     this.filterForm = fb.group({
-      'role' : [],
-      'type' : [],
+      'role': [],
+      'type': [],
     });
-   /* this.filterForm.get("role")?.valueChanges.subscribe(value =>{
-      this.massParts = MassStructure.clon.filter(massPart => {
-        if (value) {
-          return massPart.parts.filter(
-            massPart2 => this.hasMassServices(massPart2, value)
-          );
-        } else {
-          return MassStructure;
-        }
-      });
-      console.log(this.massParts);
-    })*/
+    /* this.filterForm.get("role")?.valueChanges.subscribe(value =>{
+       this.massParts = MassStructure.clon.filter(massPart => {
+         if (value) {
+           return massPart.parts.filter(
+             massPart2 => this.hasMassServices(massPart2, value)
+           );
+         } else {
+           return MassStructure;
+         }
+       });
+       console.log(this.massParts);
+     })*/
   }
 
   hasMassServices(massPart: MassPart): boolean {

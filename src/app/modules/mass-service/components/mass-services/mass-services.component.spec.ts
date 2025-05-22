@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { MassServicesComponent } from './mass-services.component';
+import {MassServicesComponent} from './mass-services.component';
 
 describe('MassServicesComponent', () => {
   let component: MassServicesComponent;

@@ -9,22 +9,22 @@ $secondary: #ffba5a;
 $secondary-light: lighten($secondary, 30);
 $secondary-dark: darken($secondary, 10);
 
-$red:#d93826;
-$yellow:#ffd000;
-$green:#4dc62f;
-$cyan:#5e9fe8;
-$blue:$cyan;
-$purple:#A367BB;
+$red: #d93826;
+$yellow: #ffd000;
+$green: #4dc62f;
+$cyan: #5e9fe8;
+$blue: $cyan;
+$purple: #A367BB;
 //$orange:$orange;
-$blue-silver:#F0F0F7;
-$silver:#e4e4e4;
-$gray:#737373;
+$blue-silver: #F0F0F7;
+$silver: #e4e4e4;
+$gray: #737373;
 
 $secondary-lighter: #EFF5F8;
 
-$success:       $green !default;
-$warning:       $yellow !default;
-$danger:        $red !default;
+$success: $green !default;
+$warning: $yellow !default;
+$danger: $red !default;
 
 
 $smWidth: 768px;
@@ -32,8 +32,8 @@ $mdWidth: 992px;
 $lgWidth: 1170px;
 $xlWidth: 1400px;
 
-$fb-color:  #3B5998;
-$google-plus-color:  #d34836;
+$fb-color: #3B5998;
+$google-plus-color: #d34836;
 
 
 .box {

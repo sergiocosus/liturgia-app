@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {MassPart} from "./classes/mass-part";
 import {MassService} from "./classes/mass-service";
 import {MassRole} from "./classes/mass-role";
@@ -14,8 +14,6 @@ import {MassStructure} from "./classes/mass-structure";
 export class AppComponent {
 
   title = 'liturgia-app';
-
-
 
 
   constructor(fb: FormBuilder) {

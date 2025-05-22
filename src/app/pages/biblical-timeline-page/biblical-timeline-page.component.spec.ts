@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { BiblicalTimelinePageComponent } from './biblical-timeline-page.component';
+import {BiblicalTimelinePageComponent} from './biblical-timeline-page.component';
 
 describe('BiblicalTimelinePageComponent', () => {
   let component: BiblicalTimelinePageComponent;

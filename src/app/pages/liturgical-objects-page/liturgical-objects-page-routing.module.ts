@@ -4,7 +4,7 @@ import {LiturgicalObjectsPageComponent} from "./liturgical-objects-page.componen
 
 const routes: Routes = [
   {
-    path:'',
+    path: '',
     component: LiturgicalObjectsPageComponent
   }
 ];
@@ -13,4 +13,5 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class LiturgicalObjectsPageRoutingModule { }
+export class LiturgicalObjectsPageRoutingModule {
+}

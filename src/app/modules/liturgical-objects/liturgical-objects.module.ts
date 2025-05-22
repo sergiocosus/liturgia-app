@@ -1,7 +1,6 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { LiturgicalObjectComponent } from './components/liturgical-object/liturgical-object.component';
-
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {LiturgicalObjectComponent} from './components/liturgical-object/liturgical-object.component';
 
 
 @NgModule({
@@ -12,4 +11,5 @@ import { LiturgicalObjectComponent } from './components/liturgical-object/liturg
     CommonModule
   ]
 })
-export class LiturgicalObjectsModule { }
+export class LiturgicalObjectsModule {
+}
