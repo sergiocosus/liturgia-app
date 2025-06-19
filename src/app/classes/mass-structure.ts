@@ -26,7 +26,7 @@ export let MassStructure = [
               new MassServiceInstruction('Presentar y dar el incensario al sacerdote',
                 'Una vez hecha la reverencia al altar, esperar a que el celebrante bese el altar para entonces presentarle el incensario,' +
                 ' una vez que el sacerdote ha puesto incienso en el incensario, entregarselo. Esperar a que el celebrante termine de incensar para tomar el incensario',
-                'turiferary/poniendo-incienso_.jpeg'),
+                'turiferary/poniendo-incienso_.jpg'),
             ]),
             new MassService(MassRole.roles.shuttle, ""),
             new MassService(MassRole.roles.highCross, ""),
@@ -103,7 +103,7 @@ export let MassStructure = [
           massServices: [
             new MassService(MassRole.roles.candlestick, ""),
             new MassService(MassRole.roles.thuriferary, "", [
-              new MassServiceInstruction('Presentar el incensario al Sacerdote', '', 'turiferary/poniendo-incienso_.jpeg  '),
+              new MassServiceInstruction('Presentar el incensario al Sacerdote', '', 'turiferary/poniendo-incienso_.jpg  '),
               new MassServiceInstruction('Al centro de los ciriales', 'Tomar el lugar en medio de los ciriales y esperar ahí hasta que hagan reverencia al altar',
                 'turiferary/en-medio-ciriales.jpg'),
 
@@ -125,7 +125,7 @@ export let MassStructure = [
               new MassServiceInstruction('Al lado del sacerdote', 'Una vez hecha la reverencia, permanecer al lado del sacerdote esperando el momento en que solicite el incensario para incensar' +
                 ' el Evangeliario o Leccionario. Una vez incensado, permanecer ahí hasta que termine de proclamar el Evangelio, ' +
                 'es decir, cuando diga "Palabra del Señor" y la asamblea conteste "Gloria a ti Señor Jesús"', 'turiferary/incensario-evangelio.jpg'),
-              new MassServiceInstruction('De nuevo al centro de los ciriales', 'Tomar el lugar en medio de los ciriales y esperar ahí hasta que hagan reverencia al altar y volver a tu lugar', 'turiferary/en-medio-ciriales.png'),
+              new MassServiceInstruction('De nuevo al centro de los ciriales', 'Tomar el lugar en medio de los ciriales y esperar ahí hasta que hagan reverencia al altar y volver a tu lugar', 'turiferary/en-medio-ciriales.jpg'),
             ]),
             new MassService(MassRole.roles.miter,
               "Una vez que besó el evangeliario se le da la mitra."
@@ -166,7 +166,7 @@ export let MassStructure = [
                 new MassServiceInstruction(
                   'Ofrecer el incensario al sacerdote',
                   'Antes después de darle al celebrante las vinajeras con el vino y antes de que se lave las manos se presenta el incensario al sacerdote para que incense las ofrendas, el altar y las imágenes',
-                  'turiferary/poniendo-incienso_.jpeg'
+                  'turiferary/poniendo-incienso_.jpg'
                 ),
                 new MassServiceInstruction(
                   'Incensar al celebrante',
@@ -229,7 +229,7 @@ export let MassStructure = [
                     [
                       new MassServiceInstruction('Preparar incensario',
                         'Con ayuda de la naveta colocar incienso en el incensario poco antes de terminar el canto del Santo',
-                        'turiferary/poniendo-incienso_.jpeg'
+                        'turiferary/poniendo-incienso_.jpg'
                       ),
                     ],),
                 ]
