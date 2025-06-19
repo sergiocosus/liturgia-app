@@ -1,4 +1,5 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {MatIconRegistry} from "@angular/material/icon";
 
 @Component({
   selector: 'app-nav-pages',
@@ -8,7 +9,10 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 export class NavPagesComponent implements OnInit {
   @Output() selected = new EventEmitter();
 
-  constructor() {
+  constructor(private matIconRegistry: MatIconRegistry) {
+    this.matIconRegistry.addSvgIcon(
+      'priest', 'assets/icons/priest.png'
+    )
   }
 
   ngOnInit() {

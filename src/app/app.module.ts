@@ -27,6 +27,9 @@ import {MassServiceIconComponent} from './components/mass-service-icon/mass-serv
     SharedModule
   ],
   providers: [],
+  exports: [
+    MassServiceIconComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

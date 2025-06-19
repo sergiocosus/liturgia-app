@@ -18,14 +18,20 @@
       </mat-option>
     </mat-select>
   </mat-form-field>
+  <mat-checkbox formControlName="showProcession">
+    <mat-label>Mostrar procesiones</mat-label>
+  </mat-checkbox>
+  <button mat-button (click)="openAll()">
+    Expandir todo
+  </button>
 </div>
 
-<mat-accordion multi>
+<mat-accordion multi #accordions="matAccordion">
   <ng-container *ngFor="let massPart of massParts">
 
-    <mat-expansion-panel *ngIf="hasMassServices(massPart)" [expanded]="true">
+    <mat-expansion-panel [disabled]="!hasMassServices(massPart)" [expanded]="true">
       <mat-expansion-panel-header>
-        <mat-panel-title>
+        <mat-panel-title class="first-level">
           {{ massPart.name }}
         </mat-panel-title>
         <mat-panel-description>
@@ -33,12 +39,11 @@
         </mat-panel-description>
       </mat-expansion-panel-header>
 
-      <ng-container *ngFor="let massPart of massPart.parts">
-        <mat-expansion-panel *ngIf="hasMassServices(massPart)"
-                             [expanded]="massPart.parts?.length"
-                             [disabled]="!massPart.massServices?.length">
+      <mat-accordion multi #accordions="matAccordion"  *ngFor="let massPart of massPart.parts">
+        <mat-expansion-panel [disabled]="!hasMassServices(massPart)"
+                             [expanded]="!!massPart.parts?.length">
           <mat-expansion-panel-header>
-            <mat-panel-title>
+            <mat-panel-title class="second-level">
               {{ massPart.name }}
             </mat-panel-title>
             <mat-panel-description>
@@ -54,20 +59,20 @@
           </mat-expansion-panel-header>
 
           <div class="part-content">
-            <app-mass-services [massServices]="massPart.massServices"></app-mass-services>
-            <app-mass-procession *ngIf="massPart.processionOrder?.length"
+            <app-mass-services *ngIf="massPart.massServices?.length"
+                               [selectedRole]="filterForm.get('role')?.value"
+                               [massServices]="massPart.massServices"></app-mass-services>
+            <app-mass-procession *ngIf="massPart.processionOrder?.length && filterForm.get('showProcession')?.value"
                                  [processionOrder]="massPart.processionOrder">
             </app-mass-procession>
-
           </div>
 
 
-          <ng-container *ngFor="let massPart of massPart.parts">
-            <mat-expansion-panel *ngIf="hasMassServices(massPart)"
-                                 [expanded]="massPart.parts?.length"
-                                 [disabled]="!massPart.massServices?.length">
+          <mat-accordion multi #accordions="matAccordion">
+            <mat-expansion-panel *ngFor="let massPart of massPart.parts"
+                                 [disabled]="!hasMassServices(massPart)">
               <mat-expansion-panel-header>
-                <mat-panel-title>
+                <mat-panel-title  class="third-level">
                   {{ massPart.name }}
                 </mat-panel-title>
                 <mat-panel-description>
@@ -78,14 +83,17 @@
                   [massRole]="massService.massRole"></app-mass-service-icon>
               </mat-expansion-panel-header>
 
-              <h3 *ngIf="massPart.massServices?.length">Servicios</h3>
-              <app-mass-service *ngFor="let massService of massPart.massServices"
-                                [massService]="massService"></app-mass-service>
-
+              <div class="part-content">
+                <app-mass-services *ngIf="massPart.massServices?.length"
+                                   [massServices]="massPart.massServices"></app-mass-services>
+                <app-mass-procession *ngIf="massPart.processionOrder?.length"
+                                     [processionOrder]="massPart.processionOrder">
+                </app-mass-procession>
+              </div>
             </mat-expansion-panel>
-          </ng-container>
+          </mat-accordion>
         </mat-expansion-panel>
-      </ng-container>
+      </mat-accordion>
     </mat-expansion-panel>
   </ng-container>
 </mat-accordion>

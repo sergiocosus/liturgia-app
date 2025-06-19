@@ -43,9 +43,7 @@
   width: 100%;
 }
 
-.active {
-  background-color: darken($secondary, 30%) !important;
-}
+
 
 mat-sidenav-content {
   display: flex;
@@ -60,6 +58,10 @@ app-nav-pages ::ng-deep a {
 }
 
 .top-bar {
+  align-items: center;
+  display: flex;
+  align-items: stretch;
+
   app-nav-pages {
     display: flex;
 
@@ -82,6 +84,14 @@ app-nav-pages ::ng-deep a {
   white-space: pre-wrap;
   line-height: 1em;
   text-align: center;
+  font-family: "Fray Gabriel";
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  font-size: 1.25em;
+  margin-right: 1em;
+  text-decoration: none;
+  color: white;
 
   &.long-text {
     font-size: .75em;

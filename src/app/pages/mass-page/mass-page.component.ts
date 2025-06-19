@@ -1,9 +1,10 @@
-import {Component} from '@angular/core';
+import {Component, ViewChild, ViewChildren} from '@angular/core';
 import {MassType} from "../../classes/mass-type";
 import {MassRole} from "../../classes/mass-role";
 import {MassPart} from "../../classes/mass-part";
 import {MassStructure} from "../../classes/mass-structure";
 import {FormBuilder, FormGroup} from "@angular/forms";
+import {MatAccordion} from "@angular/material/expansion";
 
 @Component({
   selector: 'app-mass-page',
@@ -11,6 +12,7 @@ import {FormBuilder, FormGroup} from "@angular/forms";
   styleUrls: ['./mass-page.component.scss']
 })
 export class MassPageComponent {
+  @ViewChildren('accordions') accordions: MatAccordion[];
 
   title = 'liturgia-app';
 
@@ -31,6 +33,7 @@ export class MassPageComponent {
     this.filterForm = fb.group({
       'role': [],
       'type': [],
+      'showProcession': [],
     });
     /* this.filterForm.get("role")?.valueChanges.subscribe(value =>{
        this.massParts = MassStructure.clon.filter(massPart => {
@@ -55,5 +58,10 @@ export class MassPageComponent {
     return !!massPart.massServices?.find(massService =>
       massService.massRole.name == selectedRole.name
     ) || !!massPart.parts?.find(part => this.hasMassServices(part));
+  }
+
+  openAll() {
+    console.log(this.accordions);
+    this.accordions.forEach(accordion=>accordion.openAll())
   }
 }

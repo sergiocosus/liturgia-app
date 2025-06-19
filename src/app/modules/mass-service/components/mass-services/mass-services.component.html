@@ -1,5 +1,9 @@
 <div class="mass-service">
-  <h3 *ngIf="massServices?.length">Servicios</h3>
-  <app-mass-service *ngFor="let massService of massServices"
-                    [massService]="massService"></app-mass-service>
+  <!--<h3 *ngIf="massServices?.length">Servicios</h3>-->
+  <ng-container *ngFor="let massService of massServices">
+    <app-mass-service *ngIf="selectedRole ? selectedRole.name ==  massService.massRole.name:
+    massService.description.length || massService.instructions?.length
+"
+      [massService]="massService"></app-mass-service>
+  </ng-container>
 </div>

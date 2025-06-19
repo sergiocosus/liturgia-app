@@ -1,5 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {MassService} from "../../../../classes/mass-service";
+import {MassRole} from "../../../../classes/mass-role";
 
 @Component({
   selector: 'app-mass-services',
@@ -8,4 +9,5 @@ import {MassService} from "../../../../classes/mass-service";
 })
 export class MassServicesComponent {
   @Input() massServices: MassService[] | undefined = [];
+  @Input() selectedRole: MassRole | undefined;
 }

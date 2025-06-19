@@ -8,8 +8,8 @@ import {MatExpansionModule} from "@angular/material/expansion";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatSelectModule} from "@angular/material/select";
 import {MatToolbarModule} from "@angular/material/toolbar";
-import {MassServiceComponent} from '../../modules/mass-service/components/mass-service/mass-service.component';
 import {MassServiceModule} from "../../modules/mass-service/mass-service.module";
+import {MatButtonModule} from "@angular/material/button";
 
 
 @NgModule({
@@ -22,6 +22,7 @@ import {MassServiceModule} from "../../modules/mass-service/mass-service.module"
     MassPageRoutingModule,
     MatExpansionModule,
     MatFormFieldModule,
+    MatButtonModule,
     MatSelectModule,
     MatToolbarModule,
     MassServiceModule,

@@ -1,7 +1,17 @@
 <div class="role-name" *ngIf="massService">
+  <app-mass-service-icon [massRole]="massService.massRole"></app-mass-service-icon>
   {{ massService.massRole.name }}
 </div>
 
 <div class="description" *ngIf="massService">
   {{ massService.description }}
+</div>
+<div class="instructions" *ngIf="massService?.instructions?.length">
+  <div class="instruction" *ngFor="let instruction of massService?.instructions">
+    <img [src]="'assets/'+ instruction.picture"/>
+    <div class="data">
+      <span class="name">{{instruction.name}}</span>
+      <span class="description">{{instruction.description}}</span>
+    </div>
+  </div>
 </div>

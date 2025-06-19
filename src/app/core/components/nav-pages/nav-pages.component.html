@@ -1,6 +1,19 @@
+
+<a mat-list-item routerLink="/mass" (click)="selected.emit()"
+   routerLinkActive="active"
+   [routerLinkActiveOptions]="{exact: true}">
+  <mat-icon>menu_book</mat-icon>
+  <span>Partes de la Misa</span>
+</a>
+<a mat-list-item routerLink="/biblical-timeline" (click)="selected.emit()"
+   routerLinkActive="active"
+   [routerLinkActiveOptions]="{exact: true}">
+  <mat-icon>timeline</mat-icon>
+  <span>Línea del tiempo Bíblica</span>
+</a>
 <a mat-list-item routerLink="/" (click)="selected.emit()"
    routerLinkActive="active"
    [routerLinkActiveOptions]="{exact: true}">
-  <mat-icon>home</mat-icon>
-  {{ 'nav.main' }}
+  <mat-icon>highlight</mat-icon>
+  <span>Objetos litúrgicos</span>
 </a>

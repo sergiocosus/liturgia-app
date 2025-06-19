@@ -22,12 +22,16 @@
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
 
-      <app-nav-pages *ngIf="!(isHandset$ | async)"></app-nav-pages>
+
+      <a class="title" routerLink="/"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{exact: true}">
+        Liturgia App
+      </a>
       <div class="spacer"></div>
 
-      <span class="title">
-        Liturgia App
-      </span>
+      <app-nav-pages *ngIf="!(isHandset$ | async)"></app-nav-pages>
+
 
       <div class="spacer"></div>
 

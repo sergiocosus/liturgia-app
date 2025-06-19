@@ -1,7 +1,19 @@
+@import "src/variables";
+
 :host {
   ::ng-deep mat-expansion-panel-header {
     height: auto;
-    padding: 1em;
+    padding: .5em;
+  }
+  ::ng-deep .mat-expansion-panel-body {
+    @media (max-width: $smWidth) {
+      padding: 0 .25em .15em;
+
+      &.mat-expanded {
+        padding: 0 .5em .15em;
+
+      }
+    }
   }
 }
 
@@ -13,10 +25,19 @@ h3 {
 .part-content {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  app-mass-services {
+    flex: 1 1 20em
+  }
 }
 
 .description {
   flex: 2;
+  @media (max-width: $smWidth) {
+    display: none;
+  }
 }
 
 .icons {
@@ -28,4 +49,16 @@ h3 {
 
 mat-panel-title {
   font-weight: 500;
+  @media (max-width: $smWidth) {
+    flex-grow: 2;
+  }
+  &.first-level {
+    font-weight: bolder;
+  }
+  &.second-level {
+    font-weight: 500;
+  }
+  &.third-level {
+    font-weight: normal;
+  }
 }
