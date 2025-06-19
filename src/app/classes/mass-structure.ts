@@ -105,7 +105,7 @@ export let MassStructure = [
             new MassService(MassRole.roles.thuriferary, "", [
               new MassServiceInstruction('Presentar el incensario al Sacerdote', '', 'turiferary/poniendo-incienso_.jpeg  '),
               new MassServiceInstruction('Al centro de los ciriales', 'Tomar el lugar en medio de los ciriales y esperar ahí hasta que hagan reverencia al altar',
-                'turiferary/en-medio-ciriales.png'),
+                'turiferary/en-medio-ciriales.jpg'),
 
             ]),
             new MassService(MassRole.roles.shuttle, ""),
