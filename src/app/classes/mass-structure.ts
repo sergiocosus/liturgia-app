@@ -33,8 +33,20 @@ export let MassStructure = [
             new MassService(MassRole.roles.candlestick, ""),
             new MassService(MassRole.roles.acolyte, ""),
             new MassService(MassRole.roles.book, ""),
-            new MassService(MassRole.roles.miter, ""),
-            new MassService(MassRole.roles.crosier, ""),
+            new MassService(MassRole.roles.miter, "Recuerda siempre portar el paño de hombros y que tu lugar en el presbiterio esté cerca al del Obispo", [
+              new MassServiceInstruction('Al final de la procesión',
+                'Va al final de la procesión, detrás del obispo, junto con el familiar que sostendría el báculo', "mass/familiar-procesion.jpg"),
+              new MassServiceInstruction('Tomar la mitra', 'Una vez que el Obispo hace la reverencia altar, ' +
+                'deberás tomar la mitra de las manos del Obipo, recuerda no tocarla directamente, ' +
+                'sino con el paño de hombros', "mass/familiar-mitra-entrada.jpg"),
+            ]),
+            new MassService(MassRole.roles.crosier, "Recuerda siempre portar el paño de hombros y que tu lugar en el presbiterio esté cerca al del Obispo", [
+              new MassServiceInstruction('Al final de la procesión',
+                'Va al final de la procesión, detrás del obispo, junto con el familiar que sostendría la mitra', "mass/familiar-procesion.jpg"),
+              new MassServiceInstruction('Tomar el báculo', 'Una vez que el Obispo hace la reverencia altar, ' +
+                'deberás tomar la mitra de las manos del Obipo, recuerda no tocarla directamente, ' +
+                'sino con el paño de hombros', "mass/familiar-baculo-entrada.jpg"),
+            ]),
           ],
           processionOrder: [
             [new MassRole('', []), MassRole.roles.ceremonialist],
@@ -109,11 +121,17 @@ export let MassStructure = [
 
             ]),
             new MassService(MassRole.roles.shuttle, ""),
-            new MassService(MassRole.roles.miter,
-              "Se le recoge la mitra una vez que el sacerdote o diácono ha pedido la bendición al obispo para proclamar el evangelio "
+            new MassService(MassRole.roles.miter, "", [
+                new MassServiceInstruction('Recoger mitra',
+                  "Se le recoge la mitra una vez que el sacerdote o diácono ha pedido la bendición al obispo para proclamar el evangelio",
+                  "mass/aleluya-entrega-mitra.jpg")
+              ]
             ),
-            new MassService(MassRole.roles.crosier,
-              "Se le da el báculo una vez que el sacerdote o diácono ha pedido la bendición al obispo para proclamar el evangelio"
+            new MassService(MassRole.roles.crosier, "", [
+              new MassServiceInstruction('Entregar báculo',
+                "Se le da el báculo una vez que el sacerdote o diácono ha pedido la bendición al obispo para proclamar el evangelio, después de haber dado el báculo",
+                "mass/aleluya-recibe-baculo.jpg")
+            ]
             ),
           ],
         },
@@ -188,9 +206,6 @@ export let MassStructure = [
                   'turiferary/incensando-a-la-asamblea.jpg'
                 ),
               ],
-            ),
-            new MassService(MassRole.roles.miter,
-              "Una vez que besó el evangeliario se le da la mitra."
             ),
             new MassService(MassRole.roles.crosier,
               "Una vez terminado el diácono o sacerdote de preparar los dones, éste invita al obispo para hacer oración sobre los dones, en este momento se le da el báculo y se le recoge cuando llegue al altar (es un movimiento rápido por ser a veces breves la distancia)"
@@ -318,12 +333,15 @@ export let MassStructure = [
                 name: 'Purificación de los vasos sagrados',
                 massServices: [
                   new MassService(MassRole.roles.acolyte, ""),
-                ]
+                  new MassService(MassRole.roles.miter, "Entregar solideo una vez que se haya sentado el Obispo, mientras otro purifica los vasos sagrados"),
+                ],
               },
               {
                 name: 'Oración después de la Sagrada Comunión',
                 massServices: [
                   new MassService(MassRole.roles.book, ""),
+                  new MassService(MassRole.roles.miter, "Entregar la mitra una vez que se haya terminado la oración después de la comunión, la conserva hasta el final de la misa"),
+                  new MassService(MassRole.roles.crosier, "Entregar el báculo una vez que se haya terminado la oración después de la comunión, lo conserva hasta el final de la misa"),
                 ]
               },
             ]
@@ -351,7 +369,14 @@ export let MassStructure = [
             ]
           },
           {
-            name: 'Procesión de salida'
+            name: 'Procesión de salida',
+            massServices: [
+              new MassService(MassRole.roles.candlestick, ""),
+              new MassService(MassRole.roles.highCross, ""),
+              new MassService(MassRole.roles.miter, "Tomar lugar al final de la procesión, después del Obispo"),
+              new MassService(MassRole.roles.crosier, "Tomar lugar al final de la procesión, después del Obispo"),
+
+            ]
           }
         ]
     }

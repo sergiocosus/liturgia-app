@@ -4,14 +4,15 @@
   background-color: rgba($gray, .2);
   border-radius: .5em;
   padding: .5em;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  &:empty {
+    display: none;
+  }
 }
 
 h2 {
   margin: 0;
 }
 
-.mass-service {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-}

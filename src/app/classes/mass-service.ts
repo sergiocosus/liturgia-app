@@ -6,9 +6,7 @@ export class MassService {
   constructor(massRole: MassRole, description: string = '', massServiceInstruction: MassServiceInstruction[] = []) {
     this.massRole = massRole;
     this.description = description;
-    console.log(massServiceInstruction);
     this.instructions = massServiceInstruction;
-    console.log("i", this.instructions);
   }
 
   massRole: MassRole;

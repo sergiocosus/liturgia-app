@@ -49,6 +49,8 @@ h3 {
 
 mat-panel-title {
   font-weight: 500;
+  flex-grow: .5;
+
   @media (max-width: $smWidth) {
     flex-grow: 2;
   }
@@ -61,4 +63,7 @@ mat-panel-title {
   &.third-level {
     font-weight: normal;
   }
+}
+.mat-expansion-panel-header.mat-expanded {
+  height: auto;
 }

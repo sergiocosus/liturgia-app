@@ -7,8 +7,9 @@
       </mat-option>
     </mat-select>
   </mat-form-field>
+
   <mat-form-field>
-    <mat-label>Rol</mat-label>
+    <mat-label>Servicio</mat-label>
     <mat-select formControlName="role">
       <mat-option *ngFor="let massRole of massRoles" [value]="massRole">
         {{ massRole.name }}
@@ -18,11 +19,16 @@
       </mat-option>
     </mat-select>
   </mat-form-field>
+
   <mat-checkbox formControlName="showProcession">
     <mat-label>Mostrar procesiones</mat-label>
   </mat-checkbox>
-  <button mat-button (click)="openAll()">
-    Expandir todo
+
+  <button mat-raised-button (click)="openAll()">
+    Expandir
+  </button>
+  <button mat-raised-button (click)="closeAll()">
+    Colapsar
   </button>
 </div>
 
@@ -85,6 +91,7 @@
 
               <div class="part-content">
                 <app-mass-services *ngIf="massPart.massServices?.length"
+                                   [selectedRole]="filterForm.get('role')?.value"
                                    [massServices]="massPart.massServices"></app-mass-services>
                 <app-mass-procession *ngIf="massPart.processionOrder?.length"
                                      [processionOrder]="massPart.processionOrder">
