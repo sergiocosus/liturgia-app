@@ -29,8 +29,14 @@ export let MassStructure = [
                 'turiferary/poniendo-incienso_.jpg'),
             ]),
             new MassService(MassRole.roles.shuttle, ""),
-            new MassService(MassRole.roles.highCross, ""),
-            new MassService(MassRole.roles.candlestick, ""),
+            new MassService(MassRole.roles.highCross, "", [
+              new MassServiceInstruction('Orden de la procesión', 'En frente de la procesión, después del incensario y la naveta, al llegar frente al altar, hacer reverencia y dejar la Cruz Alta en un lugar adecuado ', 'candlestick/ciriales-entrada-a.svg')
+              ]),
+            new MassService(MassRole.roles.candlestick, "", [
+              new MassServiceInstruction('Orden de la procesión', 'Atrás de la Cruz Alta', 'candlestick/ciriales-entrada-a.svg'),
+              new MassServiceInstruction('Hacer reverencia', 'Una vez que la Cruz Alta haya hecho reverencia, avanzar y también hacer referencia los ciriales', 'candlestick/ciriales-entrada-b.svg'),
+              new MassServiceInstruction('Desplazarse a su lugar', 'Hecha la reverencia, desplazarse a su lugar', 'candlestick/ciriales-entrada-c.svg'),
+            ]),
             new MassService(MassRole.roles.acolyte, ""),
             new MassService(MassRole.roles.book, ""),
             new MassService(MassRole.roles.miter, "Recuerda siempre portar el paño de hombros y que tu lugar en el presbiterio esté cerca al del Obispo", [
@@ -96,7 +102,7 @@ export let MassStructure = [
     },
     {
       name: 'Liturgia de la Palabra',
-      description: 'Dios nos habla',
+      description: 'En ella, escuchamos y meditamos la Palabra proclamada, que es la Revelación del misterio de Dios.',
       parts: [
         {
           name: 'Primera Lectura',
@@ -112,11 +118,20 @@ export let MassStructure = [
         },
         {
           name: 'Aleluya',
+          description: 'Es una exclamación hebrea que se compone de dos palabras:\n' +
+            '“Halleu” que quiere decir “alaben” y “Yah” que es abreviación de Yahvé el nombre de Dios:\n' +
+            'Aleluya,  pues , quiere decir, “alaben a Dios”',
           massServices: [
-            new MassService(MassRole.roles.candlestick, ""),
+            new MassService(MassRole.roles.candlestick, "", [
+              new MassServiceInstruction('Desplazarse hacia el centro del altar', 'Al comenzar el canto del aleluya se desplazan ambos ciriales hacia en frente del altar', 'candlestick/ciriales-evangelio-a.svg'),
+              new MassServiceInstruction('Hacer reverencia', '', 'candlestick/ciriales-evangelio-b.svg'),
+              new MassServiceInstruction('Desplazarse hacia los ángulos del altar', '', 'candlestick/ciriales-evangelio-c.svg'),
+              new MassServiceInstruction('Hacer reverencia junto al sacerdote y el incensario', 'Después de la aclamación antes del evangelio, se hará esta referencia', 'candlestick/ciriales-evangelio-d.svg'),
+              new MassServiceInstruction('Desplazarse hacia el ambón', 'Junto con el sacerdote y el incensario se desplazan hacia enfrente el ambón', 'candlestick/ciriales-evangelio-e.svg'),
+            ]),
             new MassService(MassRole.roles.thuriferary, "", [
               new MassServiceInstruction('Presentar el incensario al Sacerdote', '', 'turiferary/poniendo-incienso_.jpg  '),
-              new MassServiceInstruction('Al centro de los ciriales', 'Tomar el lugar en medio de los ciriales y esperar ahí hasta que hagan reverencia al altar',
+              new MassServiceInstruction('Al centro entre los ciriales', 'Tomar el lugar en medio de los ciriales y esperar ahí hasta que hagan reverencia al altar',
                 'turiferary/en-medio-ciriales.jpg'),
 
             ]),
@@ -128,17 +143,23 @@ export let MassStructure = [
               ]
             ),
             new MassService(MassRole.roles.crosier, "", [
-              new MassServiceInstruction('Entregar báculo',
-                "Se le da el báculo una vez que el sacerdote o diácono ha pedido la bendición al obispo para proclamar el evangelio, después de haber dado el báculo",
-                "mass/aleluya-recibe-baculo.jpg")
-            ]
+                new MassServiceInstruction('Entregar báculo',
+                  "Se le da el báculo una vez que el sacerdote o diácono ha pedido la bendición al obispo para proclamar el evangelio, después de haber dado el báculo",
+                  "mass/aleluya-recibe-baculo.jpg")
+              ]
             ),
           ],
         },
         {
           name: 'Evangelio',
+          description: 'Jesús mismo nos anuncia la Buena Noticia de la salvación que nos ha traído. Hacemos la señal de la cruz al Evangelio, para afirmar que somos cristianos y queremos recibir las enseñanzas de Cristo.',
           massServices: [
-            new MassService(MassRole.roles.candlestick, "Se mantienen "),
+            new MassService(MassRole.roles.candlestick, "", [
+              new MassServiceInstruction('Permanecen frente al ambón', '', 'candlestick/ciriales-evangelio-f.svg'),
+              new MassServiceInstruction('Hacia enfrente del altar', 'Al terminar el evangelio se desplazan hacia enfrente de los ángulos del altar', 'candlestick/ciriales-evangelio-g.svg'),
+              new MassServiceInstruction('Hacer reverencia', 'Se hace reverencia junto al sacerdote, pero si no los acompaña la hacen solos', 'candlestick/ciriales-evangelio-h.svg'),
+              new MassServiceInstruction('Se desplaza cada cirial a su lugar', '', 'candlestick/ciriales-evangelio-k.svg'),
+            ]),
             new MassService(MassRole.roles.thuriferary, "", [
               new MassServiceInstruction('Al lado del sacerdote', 'Una vez hecha la reverencia, permanecer al lado del sacerdote esperando el momento en que solicite el incensario para incensar' +
                 ' el Evangeliario o Leccionario. Una vez incensado, permanecer ahí hasta que termine de proclamar el Evangelio, ' +
@@ -155,12 +176,16 @@ export let MassStructure = [
         },
         {
           name: 'Homilia',
+          description: 'La explicación de la Palabra de Dios, sirve para alimentar la vida cristiana de la comunidad.'
         },
         {
           name: 'Credo',
+          description: 'El Credo, es una respuesta a la Palabra de Dios dentro de la Misa. La requiere ser confesada, proclamada en público, en medio de la asamblea y del mundo.\n' +
+            'El Credo viene a ser un síntesis, un resumen de las verdades que debemos creer\n'
         },
         {
-          name: 'Oración de los fieles (universal)',
+          name: 'Oración de los fieles (u oración universal)',
+          description: 'Es una respuesta a la Palabra de Dios, integra a la asamblea en la Iglesia universal y es ejercicio del sacerdocio bautismal o sacerdocio común de los fieles.',
           massServices: [
             new MassService(MassRole.roles.book, ""),
           ]
@@ -171,8 +196,8 @@ export let MassStructure = [
       name: 'Liturgia de la Eucaristía',
       parts: [
         {
-          name: 'Ofertorio',
-          description: 'Damos a Dios nuestros dones',
+          name: 'Ofertorio (presentación de los dones)',
+          description: 'Se llevan al altar los dones del pan  y el vino con el agua, los mismos elementos que Cristo tomó en sus manos.',
           massServices: [
             new MassService(MassRole.roles.acolyte, ""),
             new MassService(MassRole.roles.thuriferary, "",
@@ -220,6 +245,7 @@ export let MassStructure = [
         },
         {
           name: 'Oración sobre las ofrendas',
+          description: 'Con esta invitación a orar y la respuesta de la asamblea termina el rito de la presentación de los dones, introduciendo a la plegaria Eucarística por medio de la oración sobre las ofrendas.',
           massServices:
             [
               new MassService(MassRole.roles.acolyte, ""),
@@ -230,16 +256,22 @@ export let MassStructure = [
         },
         {
           name: 'Plegaria eucarística',
+          description: 'Comienza el centro y la cumbre de toda la celebración,  que es una oración de acción de gracias y de santificación. ',
           parts:
             [
               {
                 name: 'Prefacio',
-                description: 'Reconocemos la Bondad y Santidad de Dios. Peticiones a Dios',
+                description: 'El Sacerdote en nombre del pueblo de Dios, glorifica a dios Padre y le da gracias por todas las obras de la salvación o por alguno de sus aspectos particulares.\n',
               },
               {
-                name: 'Santus',
+                name: 'Aclamación - el Santo',
+                description: 'Se une la Iglesia triunfante con la militante',
                 massServices: [
-                  new MassService(MassRole.roles.candlestick, ""),
+                  new MassService(MassRole.roles.candlestick, "", [
+                    new MassServiceInstruction('Se desplazan los ciriales hacia el centro del altar', '', 'candlestick/ciriales-consagracion-a.svg'),
+                    new MassServiceInstruction('Hacer reverencia', '', 'candlestick/ciriales-consagracion-b.svg'),
+                    new MassServiceInstruction('Hacia los ángulos del altar', '', 'candlestick/ciriales-consagracion-c.svg'),
+                  ]),
                   new MassService(MassRole.roles.thuriferary, "",
                     [
                       new MassServiceInstruction('Preparar incensario',
@@ -251,8 +283,11 @@ export let MassStructure = [
               },
               {
                 name: 'Epíclesis',
+                description: 'La Iglesia, por medio de invocaciones especiales, implora la fuerza del Espíritu Santo para que los dones ofrecidos por los hombres sean consagrados, es decir, se conviertan en el Cuerpo y en la Sangre de Cristo',
                 massServices: [
-                  new MassService(MassRole.roles.candlestick, ""),
+                  new MassService(MassRole.roles.candlestick, "", [
+                    new MassServiceInstruction('Se mantienen en su lugar', '', 'candlestick/ciriales-consagracion-d.svg'),
+                  ]),
                   new MassService(MassRole.roles.thuriferary, "",
                     [
                       new MassServiceInstruction('En frente del altar',
@@ -263,10 +298,12 @@ export let MassStructure = [
                 ]
               },
               {
-                name: 'Consagración',
-                description: 'Conversión del pan y el vino en el cuerpo y la Sangre de Cristo',
+                name: 'Narración de la institución y consagración',
+                description: 'por las palabras y por las acciones de Cristo se lleva a cabo el sacrificio que el mismo Cristo instituyó en la última Cena, cuando ofreció su Cuerpo y su Sangre bajo las especies de pan y vino, y los dio a los Apóstoles para que comieran y bebieran, dejándoles el mandato de perpetuar el mismo misterio.',
                 massServices: [
-                  new MassService(MassRole.roles.candlestick, ""),
+                  new MassService(MassRole.roles.candlestick, "", [
+                    new MassServiceInstruction('Se mantienen en su lugar', '', 'candlestick/ciriales-consagracion-d.svg'),
+                  ]),
                   new MassService(MassRole.roles.thuriferary, "",
                     [
                       new MassServiceInstruction(
@@ -291,15 +328,38 @@ export let MassStructure = [
               },
               {
                 name: 'Anámnesis e Intercesiones',
+                description: 'Por la cual la Iglesia, al cumplir el mandato que recibió de Cristo por medio de los Apóstoles, realiza el memorial del mismo Cristo, renovando principalmente su bienaventurada pasión, su gloriosa resurrección y su ascensión al cielo',
                 massServices: [
-                  new MassService(MassRole.roles.candlestick, ""),
+                  new MassService(MassRole.roles.candlestick, "", [
+                    new MassServiceInstruction('Se mantienen en su lugar', '', 'candlestick/ciriales-consagracion.svg'),
+                  ]),
+                ]
+              },
+              {
+                name: 'Oblación',
+                description: 'La Iglesia, principalmente la que se encuentra congregada aquí y ahora, ofrece al Padre en el Espíritu Santo la víctima inmaculada.',
+                massServices: [
+                  new MassService(MassRole.roles.candlestick, "", [
+                    new MassServiceInstruction('Se mantienen en su lugar', '', 'candlestick/ciriales-consagracion.svg'),
+                  ]),
+                ]
+              },
+              {
+                name: 'Intercesiones',
+                description: 'por las cuales se expresa que la Eucaristía se celebra en comunión con toda la Iglesia, tanto con la del cielo, como con la de la tierra; y que la oblación se ofrece por ella misma y por todos sus miembros, vivos y difuntos, llamados a participar de la redención y de la salvación adquiridas por el Cuerpo y la Sangre de Cristo.',
+                massServices: [
+                  new MassService(MassRole.roles.candlestick, "", [
+                    new MassServiceInstruction('Se mantienen en su lugar', '', 'candlestick/ciriales-consagracion.svg'),
+                  ]),
                 ]
               },
               {
                 name: 'Doxología final',
-
+                description: ' Se expresa la glorificación de Dios, que es afirmada y concluida con la aclamación Amén del pueblo.',
                 massServices: [
-                  new MassService(MassRole.roles.candlestick, ""),
+                  new MassService(MassRole.roles.candlestick, "", [
+                    new MassServiceInstruction('Se mantienen en su lugar', '', 'candlestick/ciriales-consagracion.svg'),
+                  ]),
                 ]
               }
             ]
@@ -308,23 +368,37 @@ export let MassStructure = [
         {
           name: 'Rito de la Comunión',
           description:
-            'Padre nuestro (oración que Cristo no enseñó), Cristo se nos da en alimento para nuestra alma si estamos en gracia.',
+            'Puesto que la celebración eucarística es el banquete pascual, conviene que, según el mandato del Señor, su Cuerpo y su Sangre sean recibidos como alimento espiritual por los fieles debidamente dispuestos.',
           parts:
             [
               {
-                name: 'Padre Nuestro',
+                name: 'Oración del Señor - Padre Nuestro',
+                description: 'En la Oración del Señor se pide el pan de cada día, que para los cristianos indica principalmente el pan eucarístico, y se implora la purificación de los pecados, de modo que, en realidad, las cosas santas se den a los santos.',
+                massServices: [
+                  new MassService(MassRole.roles.candlestick, "", [
+                    new MassServiceInstruction('Se desplazan hacia el centro del altar', '', 'candlestick/ciriales-consagracion-e.svg'),
+                    new MassServiceInstruction('Hacen reverencia', '', 'candlestick/ciriales-consagracion-f.svg'),
+                    new MassServiceInstruction('Se desplaza cada cirial a su lugar', '', 'candlestick/ciriales-consagracion-g.svg'),
+                  ]),
+                ]
               },
               {
                 name: 'Ad pacem (Rito de la paz)',
+                description: 'la Iglesia implora la paz y la unidad para sí misma y para toda la familia humana, y con el que los fieles se expresan la comunión eclesial y la mutua caridad, antes de la comunión sacramental.'
               },
               {
                 name: 'Fracción del pan',
+                description: 'El gesto de la fracción del Pan realizado por Cristo en la Última Cena, que en el tiempo apostólico designó a toda la acción eucarística, significa que los fieles siendo muchos, en la Comunión de un solo Pan de vida, que es Cristo muerto y resucitado para la salvación del mundo, forman un solo cuerpo. El sacerdote parte el pan e introduce una parte de la Hostia en el cáliz para significar la unidad del Cuerpo y de la Sangre del Señor en la obra de la redención, a saber, del Cuerpo de Cristo Jesús viviente y glorioso',
               },
               {
                 name: 'Agnus Dei (Cordero de Dios)',
+                description: 'La invocación acompaña la fracción del pan',
               },
               {
                 name: 'Comunión',
+                description: ' El sacerdote se prepara para recibir fructuosamente el Cuerpo y la Sangre de Cristo con una oración en secreto. Los fieles hacen lo mismo orando en silencio.\n' +
+                  '\n' +
+                  'Después el sacerdote muestra a los fieles el Pan Eucarístico sobre la patena o sobre el cáliz y los invita al banquete de Cristo',
                 massServices: [
                   new MassService(MassRole.roles.acolyte, ""),
                 ]
@@ -338,6 +412,7 @@ export let MassStructure = [
               },
               {
                 name: 'Oración después de la Sagrada Comunión',
+                description: 'Para terminar la súplica del pueblo de Dios y también para concluir todo el rito de la Comunión, el sacerdote dice la oración después de la Comunión, en la que se suplican los frutos del misterio celebrado.',
                 massServices: [
                   new MassService(MassRole.roles.book, ""),
                   new MassService(MassRole.roles.miter, "Entregar la mitra una vez que se haya terminado la oración después de la comunión, la conserva hasta el final de la misa"),
@@ -350,32 +425,60 @@ export let MassStructure = [
     },
     {
       name: 'Ritos de despedida',
-      description:
-        'Oración de petición. Bendición del sacerdote',
+      description: 'Bendición del sacerdote',
       parts:
         [
           {
             name: 'Breves anuncios',
-            massServices: [
-              new MassService(MassRole.roles.candlestick, ""),
-              new MassService(MassRole.roles.highCross, ""),
-            ]
+            massServices: []
           },
           {
             name: 'Bendición',
+            description: ' en algunos días y ocasiones se enriquece y se expresa con la oración sobre el pueblo o con otra fórmula más solemne.',
             massServices: [
-              new MassService(MassRole.roles.candlestick, ""),
-              new MassService(MassRole.roles.highCross, ""),
+              new MassService(MassRole.roles.candlestick, "", [
+                new MassServiceInstruction('Desplazarse hacia al altar', 'Junto con la Cruz Alta los ciriales deberán desplazarse hacia al altar, dejando la cruz alta al centro del altar', 'candlestick/ciriales-bendicion-a.svg'),
+              ]),
+              new MassService(MassRole.roles.highCross, "", [
+                new MassServiceInstruction('Desplazarse hacia al altar', 'Junto con la Cruz Alta los ciriales deberán desplazarse hacia al altar, dejando la cruz alta al centro del altar', 'candlestick/ciriales-bendicion-a.svg'),
+              ]),
+            ]
+          },
+          {
+            name: 'Despedida',
+            description: ' La despedida del pueblo, por parte del diácono o del sacerdote, para que cada uno regrese a su bien obrar, alabando y bendiciendo a Dios.',
+            massServices: [
+              new MassService(MassRole.roles.candlestick, "", [
+                new MassServiceInstruction('Se mantienen en su lugar', '', 'candlestick/ciriales-bendicion-a.svg'),
+              ]),
+              new MassService(MassRole.roles.highCross, "", [
+                new MassServiceInstruction('Se mantienen en su lugar', '', 'candlestick/ciriales-bendicion-a.svg'),
+              ]),
+            ]
+          },
+          {
+            name: 'Beso del altar',
+            description: 'El beso del altar por parte del sacerdote y del diácono y después la inclinación profunda al altar de parte del sacerdote, del diácono y de los demás ministros.',
+            massServices: [
+              new MassService(MassRole.roles.candlestick, "", [
+                new MassServiceInstruction('Se mantienen en su lugar', 'Se mantinen en su lugar hasta que el sacerdote haga reverencia al Cristo', 'candlestick/ciriales-bendicion-a.svg'),
+              ]),
+              new MassService(MassRole.roles.highCross, "", [
+                new MassServiceInstruction('Se mantienen en su lugar', 'Se mantinen en su lugar hasta que el sacerdote haga reverencia al Cristo', 'candlestick/ciriales-bendicion-a.svg'),
+              ]),
             ]
           },
           {
             name: 'Procesión de salida',
             massServices: [
-              new MassService(MassRole.roles.candlestick, ""),
-              new MassService(MassRole.roles.highCross, ""),
+              new MassService(MassRole.roles.candlestick, "", [
+                new MassServiceInstruction('Procesión hacia la sacristía', 'Cruz alta y ciriales van al frente y al llegar a la sacristía se acomodan para que el sacerdote y todos los demás ministros hagan reverencia a la Cruz Alta', 'candlestick/ciriales-bendicion-b.svg'),
+              ]),
+              new MassService(MassRole.roles.highCross, "", [
+                new MassServiceInstruction('Procesión hacia la sacristía', 'Cruz alta y ciriales van al frente y al llegar a la sacristía se acomodan para que el sacerdote y todos los demás ministros hagan reverencia a la Cruz Alta', 'candlestick/ciriales-bendicion-b.svg'),
+              ]),
               new MassService(MassRole.roles.miter, "Tomar lugar al final de la procesión, después del Obispo"),
               new MassService(MassRole.roles.crosier, "Tomar lugar al final de la procesión, después del Obispo"),
-
             ]
           }
         ]

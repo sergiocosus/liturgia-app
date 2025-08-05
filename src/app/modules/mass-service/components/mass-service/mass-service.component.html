@@ -8,7 +8,7 @@
 </div>
 <div class="instructions" *ngIf="massService?.instructions?.length">
   <div class="instruction" *ngFor="let instruction of massService?.instructions">
-    <img [src]="'assets/'+ instruction.picture"/>
+    <img [src]="'assets/'+ instruction.picture" [class.no-crop]="massService?.massRole?.name == 'Cirial'"/>
     <div class="data">
       <span class="name">{{instruction.name}}</span>
       <span class="description">{{instruction.description}}</span>

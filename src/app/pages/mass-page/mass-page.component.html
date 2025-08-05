@@ -82,11 +82,15 @@
                   {{ massPart.name }}
                 </mat-panel-title>
                 <mat-panel-description>
-                  {{ massPart.description }}
+                  <div class="description">
+                    {{ massPart.description }}
+                  </div>
+                  <div class="icons">
+                    <app-mass-service-icon
+                      *ngFor="let massService of massPart.massServices"
+                      [massRole]="massService.massRole"></app-mass-service-icon>
+                  </div>
                 </mat-panel-description>
-                <app-mass-service-icon
-                  *ngFor="let massService of massPart.massServices"
-                  [massRole]="massService.massRole"></app-mass-service-icon>
               </mat-expansion-panel-header>
 
               <div class="part-content">
