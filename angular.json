@@ -65,10 +65,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "liturgia-app:build:production"
+              "buildTarget": "liturgia-app:build:production"
             },
             "development": {
-              "browserTarget": "liturgia-app:build:development"
+              "buildTarget": "liturgia-app:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -76,7 +76,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "liturgia-app:build"
+            "buildTarget": "liturgia-app:build"
           }
         },
         "test": {
