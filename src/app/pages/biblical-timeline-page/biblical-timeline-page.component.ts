@@ -10,9 +10,10 @@ interface EventItem {
 }
 
 @Component({
-  selector: 'app-biblical-timeline-page',
-  templateUrl: './biblical-timeline-page.component.html',
-  styleUrls: ['./biblical-timeline-page.component.scss']
+    selector: 'app-biblical-timeline-page',
+    templateUrl: './biblical-timeline-page.component.html',
+    styleUrls: ['./biblical-timeline-page.component.scss'],
+    standalone: false
 })
 export class BiblicalTimelinePageComponent {
   events: EventItem[];

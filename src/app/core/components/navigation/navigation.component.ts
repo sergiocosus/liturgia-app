@@ -5,9 +5,10 @@ import {map} from 'rxjs/operators';
 import {MatSidenav} from "@angular/material/sidenav";
 
 @Component({
-  selector: 'app-navigation',
-  templateUrl: './navigation.component.html',
-  styleUrls: ['./navigation.component.scss']
+    selector: 'app-navigation',
+    templateUrl: './navigation.component.html',
+    styleUrls: ['./navigation.component.scss'],
+    standalone: false
 })
 export class NavigationComponent {
   @ViewChild(MatSidenav) sidenav!: MatSidenav;

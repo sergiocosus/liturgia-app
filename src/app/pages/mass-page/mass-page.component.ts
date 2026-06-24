@@ -8,9 +8,10 @@ import {MatAccordion} from "@angular/material/expansion";
 import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
-  selector: 'app-mass-page',
-  templateUrl: './mass-page.component.html',
-  styleUrls: ['./mass-page.component.scss']
+    selector: 'app-mass-page',
+    templateUrl: './mass-page.component.html',
+    styleUrls: ['./mass-page.component.scss'],
+    standalone: false
 })
 export class MassPageComponent implements OnInit, AfterViewInit {
   @ViewChildren('accordions') accordions: MatAccordion[];

@@ -7,9 +7,10 @@ import {FormBuilder, FormGroup} from "@angular/forms";
 import {MassStructure} from "./classes/mass-structure";
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.scss'],
+    standalone: false
 })
 export class AppComponent {
 

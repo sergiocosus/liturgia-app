@@ -3,9 +3,10 @@ import {MassService} from "../../../../classes/mass-service";
 import {MassRole} from "../../../../classes/mass-role";
 
 @Component({
-  selector: 'app-mass-services',
-  templateUrl: './mass-services.component.html',
-  styleUrls: ['./mass-services.component.scss']
+    selector: 'app-mass-services',
+    templateUrl: './mass-services.component.html',
+    styleUrls: ['./mass-services.component.scss'],
+    standalone: false
 })
 export class MassServicesComponent {
   @Input() massServices: MassService[] | undefined = [];

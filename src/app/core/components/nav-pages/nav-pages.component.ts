@@ -2,9 +2,10 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {MatIconRegistry} from "@angular/material/icon";
 
 @Component({
-  selector: 'app-nav-pages',
-  templateUrl: './nav-pages.component.html',
-  styleUrls: ['./nav-pages.component.scss']
+    selector: 'app-nav-pages',
+    templateUrl: './nav-pages.component.html',
+    styleUrls: ['./nav-pages.component.scss'],
+    standalone: false
 })
 export class NavPagesComponent implements OnInit {
   @Output() selected = new EventEmitter();
