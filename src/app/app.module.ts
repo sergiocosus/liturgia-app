@@ -3,15 +3,12 @@ import {BrowserModule} from '@angular/platform-browser';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatExpansionModule} from "@angular/material/expansion";
-import {MatFormFieldModule} from "@angular/material/form-field";
-import {MatSelectModule} from "@angular/material/select";
 import {ReactiveFormsModule} from "@angular/forms";
-import {MatToolbarModule} from "@angular/material/toolbar";
 import {CoreModule} from "./core/core.module";
 import {SharedModule} from "./shared/shared.module";
 import {MassServiceIconComponent} from './components/mass-service-icon/mass-service-icon.component';
+import { providePrimeNG } from "primeng/config";
+import Aura from '@primeuix/themes/aura';
 
 @NgModule({
   declarations: [
@@ -21,12 +18,17 @@ import {MassServiceIconComponent} from './components/mass-service-icon/mass-serv
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule,
     ReactiveFormsModule,
     CoreModule,
     SharedModule
   ],
-  providers: [],
+  providers: [
+    providePrimeNG({
+      theme: {
+        preset: Aura
+      }
+    })
+  ],
   exports: [
     MassServiceIconComponent
   ],

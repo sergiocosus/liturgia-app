@@ -40,7 +40,7 @@ $google-plus-color: #d34836;
 
 
 .box {
- //@include mat-elevation(10, gray, 1);
+ @include mat.elevation(10, gray, 1);
   background: white;
   padding: .25em;
   border-radius: .5em;
