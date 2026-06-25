@@ -9,6 +9,8 @@ import {SharedModule} from "./shared/shared.module";
 import {MassServiceIconComponent} from './components/mass-service-icon/mass-service-icon.component';
 import { providePrimeNG } from "primeng/config";
 import Aura from '@primeuix/themes/aura';
+import {GoogleTagManager} from "./shared/services/google-tag-manager.service";
+import {PlatformService} from "./shared/services/platform.service";
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import Aura from '@primeuix/themes/aura';
       theme: {
         preset: Aura
       }
-    })
+    }),
+    GoogleTagManager,
+    PlatformService
   ],
   exports: [
     MassServiceIconComponent
