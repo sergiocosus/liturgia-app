@@ -1,4 +1,4 @@
-@import "src/variables";
+@use "src/variables" as vars;
 
 .sidenav-container {
   height: 100%;
@@ -7,7 +7,7 @@
 .sidenav {
   width: 200px;
   color: white;
-  background: $primary;
+  background: vars.$primary;
 
   mat-toolbar {
     display: flex;
@@ -38,7 +38,7 @@
   display: flex;
   flex-direction: column;
   flex: 1;
-  max-width: $lgWidth;
+  max-width: vars.$lgWidth;
   align-content: center;
   width: 100%;
 }
@@ -96,7 +96,7 @@ app-nav-pages ::ng-deep a {
   &.long-text {
     font-size: .75em;
 
-    @media (min-width: $smWidth) {
+    @media (min-width: vars.$smWidth) {
       font-size: 1em;
     }
   }

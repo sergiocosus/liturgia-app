@@ -1,4 +1,4 @@
-@import "src/variables";
+@use "src/variables" as vars;
 
 :host {
   ::ng-deep mat-expansion-panel-header {
@@ -6,7 +6,7 @@
     padding: .5em;
   }
   ::ng-deep .mat-expansion-panel-body {
-    @media (max-width: $smWidth) {
+    @media (max-width: vars.$smWidth) {
       padding: 0 .25em .15em;
 
       &.mat-expanded {
@@ -35,7 +35,7 @@ h3 {
 
 .description {
   flex: 2;
-  @media (max-width: $smWidth) {
+  @media (max-width: vars.$smWidth) {
     display: none;
   }
 }
@@ -51,7 +51,7 @@ mat-panel-title {
   font-weight: 500;
   flex-grow: .5;
 
-  @media (max-width: $smWidth) {
+  @media (max-width: vars.$smWidth) {
     flex-grow: 2;
   }
   &.first-level {

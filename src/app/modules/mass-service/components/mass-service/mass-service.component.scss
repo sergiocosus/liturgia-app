@@ -1,12 +1,12 @@
-@import '../../../../../variables';
+@use "src/variables" as vars;
 
 :host {
   display: flex;
   flex-direction: column;
-  border-bottom: 1px solid rgba($gray, .5);
+  border-bottom: 1px solid rgba(vars.$gray, .5);
   padding: .5em;
 
-  @media (max-width: $smWidth) {
+  @media (max-width: vars.$smWidth) {
     padding: .25em;
   }
 }
@@ -18,7 +18,7 @@
   margin-right: .25em;
   text-align: center;
   align-items: center;
-  background-color: rgba($gray, .25);
+  background-color: rgba(vars.$gray, .25);
   padding: .25em;
   margin-bottom: .25em;
   border-radius: .5em;
@@ -42,12 +42,12 @@
     align-items: center;
     flex-wrap: wrap;
     flex: 1 1 25em;
-    border: 1px solid rgba($gray, .5);
+    border: 1px solid rgba(vars.$gray, .5);
     border-radius: 1em;
     margin: .5em 0;
     flex-direction: column;
 
-    @media (min-width: $smWidth) {
+    @media (min-width: vars.$smWidth) {
       flex-direction: row;
     }
   }
@@ -67,7 +67,7 @@
 
 img {
   max-width: 100%;
-  @media (min-width: $smWidth) {
+  @media (min-width: vars.$smWidth) {
     width: 10em;
     height: 100%;
   }

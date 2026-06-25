@@ -1,11 +1,12 @@
-@import "src/variables";
+@use "src/variables" as var;
+@use "src/mixins";
 
 a {
   color: white !important;
   text-decoration: none;
   flex: 1 1 auto;
   padding: .25em;
-  @include animate();
+  @include mixins.animate();
 
   &:hover, &.active {
     border-bottom: 2px solid white;

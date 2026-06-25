@@ -1,7 +1,7 @@
-@import "src/variables";
+@use "src/variables" as vars;
 
 :host {
-  background-color: rgba($gray, .2);
+  background-color: rgba(vars.$gray, .2);
   border-radius: .5em;
   padding: .5em;
   display: flex;
