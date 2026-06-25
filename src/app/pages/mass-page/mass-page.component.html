@@ -2,18 +2,22 @@
   <mat-form-field>
     <mat-label>Tipo de misa</mat-label>
     <mat-select formControlName="type">
-      <mat-option *ngFor="let massType of massTypes" [value]="massType">
-        {{ massType }}
-      </mat-option>
+      @for (massType of massTypes; track massType) {
+        <mat-option [value]="massType">
+          {{ massType }}
+        </mat-option>
+      }
     </mat-select>
   </mat-form-field>
 
   <mat-form-field>
     <mat-label>Servicio</mat-label>
     <mat-select formControlName="role">
-      <mat-option *ngFor="let massRole of massRoles" [value]="massRole">
-        {{ massRole.name }}
-      </mat-option>
+      @for (massRole of massRoles; track massRole) {
+        <mat-option [value]="massRole">
+          {{ massRole.name }}
+        </mat-option>
+      }
       <mat-option [value]="null">
         NA
       </mat-option>
@@ -33,8 +37,7 @@
 </div>
 
 <mat-accordion multi #accordions="matAccordion">
-  <ng-container *ngFor="let massPart of massParts">
-
+  @for (massPart of massParts; track massPart) {
     <mat-expansion-panel [disabled]="!hasMassServices(massPart)" [expanded]="true">
       <mat-expansion-panel-header>
         <mat-panel-title class="first-level">
@@ -44,68 +47,77 @@
           {{ massPart.description }}
         </mat-panel-description>
       </mat-expansion-panel-header>
-
-      <mat-accordion multi #accordions="matAccordion"  *ngFor="let massPart of massPart.parts">
-        <mat-expansion-panel [disabled]="!hasMassServices(massPart)"
-                             [expanded]="!!massPart.parts?.length">
-          <mat-expansion-panel-header>
-            <mat-panel-title class="second-level">
-              {{ massPart.name }}
-            </mat-panel-title>
-            <mat-panel-description>
-              <div class="description">
-                {{ massPart.description }}
-              </div>
-              <div class="icons">
-                <app-mass-service-icon
-                  *ngFor="let massService of massPart.massServices"
-                  [massRole]="massService.massRole"></app-mass-service-icon>
-              </div>
-            </mat-panel-description>
-          </mat-expansion-panel-header>
-
-          <div class="part-content">
-            <app-mass-services *ngIf="massPart.massServices?.length"
-                               [selectedRole]="filterForm.get('role')?.value"
-                               [massServices]="massPart.massServices"></app-mass-services>
-            <app-mass-procession *ngIf="massPart.processionOrder?.length && filterForm.get('showProcession')?.value"
-                                 [processionOrder]="massPart.processionOrder">
-            </app-mass-procession>
-          </div>
-
-
-          <mat-accordion multi #accordions="matAccordion">
-            <mat-expansion-panel *ngFor="let massPart of massPart.parts"
-                                 [disabled]="!hasMassServices(massPart)">
-              <mat-expansion-panel-header>
-                <mat-panel-title  class="third-level">
-                  {{ massPart.name }}
-                </mat-panel-title>
-                <mat-panel-description>
-                  <div class="description">
-                    {{ massPart.description }}
-                  </div>
-                  <div class="icons">
+      @for (massPart of massPart.parts; track massPart) {
+        <mat-accordion multi #accordions="matAccordion" >
+          <mat-expansion-panel [disabled]="!hasMassServices(massPart)"
+            [expanded]="!!massPart.parts?.length">
+            <mat-expansion-panel-header>
+              <mat-panel-title class="second-level">
+                {{ massPart.name }}
+              </mat-panel-title>
+              <mat-panel-description>
+                <div class="description">
+                  {{ massPart.description }}
+                </div>
+                <div class="icons">
+                  @for (massService of massPart.massServices; track massService) {
                     <app-mass-service-icon
-                      *ngFor="let massService of massPart.massServices"
-                      [massRole]="massService.massRole"></app-mass-service-icon>
-                  </div>
-                </mat-panel-description>
-              </mat-expansion-panel-header>
-
-              <div class="part-content">
-                <app-mass-services *ngIf="massPart.massServices?.length"
-                                   [selectedRole]="filterForm.get('role')?.value"
-                                   [massServices]="massPart.massServices"></app-mass-services>
-                <app-mass-procession *ngIf="massPart.processionOrder?.length"
-                                     [processionOrder]="massPart.processionOrder">
+                    [massRole]="massService.massRole"></app-mass-service-icon>
+                  }
+                </div>
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <div class="part-content">
+              @if (massPart.massServices?.length) {
+                <app-mass-services
+                  [selectedRole]="filterForm.get('role')?.value"
+                [massServices]="massPart.massServices"></app-mass-services>
+              }
+              @if (massPart.processionOrder?.length && filterForm.get('showProcession')?.value) {
+                <app-mass-procession
+                  [processionOrder]="massPart.processionOrder">
                 </app-mass-procession>
-              </div>
-            </mat-expansion-panel>
-          </mat-accordion>
-        </mat-expansion-panel>
-      </mat-accordion>
+              }
+            </div>
+            <mat-accordion multi #accordions="matAccordion">
+              @for (massPart of massPart.parts; track massPart) {
+                <mat-expansion-panel
+                  [disabled]="!hasMassServices(massPart)">
+                  <mat-expansion-panel-header>
+                    <mat-panel-title  class="third-level">
+                      {{ massPart.name }}
+                    </mat-panel-title>
+                    <mat-panel-description>
+                      <div class="description">
+                        {{ massPart.description }}
+                      </div>
+                      <div class="icons">
+                        @for (massService of massPart.massServices; track massService) {
+                          <app-mass-service-icon
+                          [massRole]="massService.massRole"></app-mass-service-icon>
+                        }
+                      </div>
+                    </mat-panel-description>
+                  </mat-expansion-panel-header>
+                  <div class="part-content">
+                    @if (massPart.massServices?.length) {
+                      <app-mass-services
+                        [selectedRole]="filterForm.get('role')?.value"
+                      [massServices]="massPart.massServices"></app-mass-services>
+                    }
+                    @if (massPart.processionOrder?.length) {
+                      <app-mass-procession
+                        [processionOrder]="massPart.processionOrder">
+                      </app-mass-procession>
+                    }
+                  </div>
+                </mat-expansion-panel>
+              }
+            </mat-accordion>
+          </mat-expansion-panel>
+        </mat-accordion>
+      }
     </mat-expansion-panel>
-  </ng-container>
+  }
 </mat-accordion>
 <router-outlet></router-outlet>

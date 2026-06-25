@@ -1,17 +1,25 @@
-<div class="role-name" *ngIf="massService">
-  <app-mass-service-icon [massRole]="massService.massRole"></app-mass-service-icon>
-  {{ massService.massRole.name }}
-</div>
-
-<div class="description" *ngIf="massService">
-  {{ massService.description }}
-</div>
-<div class="instructions" *ngIf="massService?.instructions?.length">
-  <div class="instruction" *ngFor="let instruction of massService?.instructions">
-    <img [src]="'assets/'+ instruction.picture" [class.no-crop]="massService?.massRole?.name == 'Cirial'"/>
-    <div class="data">
-      <span class="name">{{instruction.name}}</span>
-      <span class="description">{{instruction.description}}</span>
-    </div>
+@if (massService) {
+  <div class="role-name">
+    <app-mass-service-icon [massRole]="massService.massRole"></app-mass-service-icon>
+    {{ massService.massRole.name }}
   </div>
-</div>
+}
+
+@if (massService) {
+  <div class="description">
+    {{ massService.description }}
+  </div>
+}
+@if (massService?.instructions?.length) {
+  <div class="instructions">
+    @for (instruction of massService?.instructions; track instruction) {
+      <div class="instruction">
+        <img [src]="'assets/'+ instruction.picture" [class.no-crop]="massService?.massRole?.name == 'Cirial'"/>
+        <div class="data">
+          <span class="name">{{instruction.name}}</span>
+          <span class="description">{{instruction.description}}</span>
+        </div>
+      </div>
+    }
+  </div>
+}

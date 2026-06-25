@@ -1,8 +1,12 @@
 <h3>Orden de la procesión</h3>
 <table>
-  <tr *ngFor="let order of processionOrder">
-    <td *ngFor="let role of order" [colSpan]="order.length == 1 ? 2 : 1">
-      <app-mass-service-icon [massRole]="role"></app-mass-service-icon>
-    </td>
-  </tr>
+  @for (order of processionOrder; track order) {
+    <tr>
+      @for (role of order; track role) {
+        <td [colSpan]="order.length == 1 ? 2 : 1">
+          <app-mass-service-icon [massRole]="role"></app-mass-service-icon>
+        </td>
+      }
+    </tr>
+  }
 </table>

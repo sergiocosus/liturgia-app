@@ -1,3 +1,5 @@
-<mat-icon *ngIf="massRole" [matTooltip]="massRole.name">
-  <img [src]="'assets/icons/'+ massRole.icon"/>
-</mat-icon>
+@if (massRole) {
+  <mat-icon [matTooltip]="massRole.name">
+    <img [src]="'assets/icons/'+ massRole.icon"/>
+  </mat-icon>
+}
