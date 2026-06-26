@@ -4,17 +4,19 @@ import {CommonModule} from '@angular/common';
 import {IndexPageRoutingModule} from './index-page-routing.module';
 import {IndexPageComponent} from './index-page.component';
 import {MatButtonModule} from "@angular/material/button";
+import {MatIcon} from "@angular/material/icon";
 
 
 @NgModule({
   declarations: [
     IndexPageComponent
   ],
-  imports: [
-    CommonModule,
-    IndexPageRoutingModule,
-    MatButtonModule
-  ]
+    imports: [
+        CommonModule,
+        IndexPageRoutingModule,
+        MatButtonModule,
+        MatIcon
+    ]
 })
 export class IndexPageModule {
 }

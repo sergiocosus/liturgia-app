@@ -1,0 +1,30 @@
+<h2>Juegos de la biblia</h2>
+<mat-form-field >
+  <mat-label>Seleccione un juego</mat-label>
+
+  <mat-select [(value)]="gameId">
+    <mat-option value="29195224-mapa_de_las_tribus_de_israel.html">
+      Mapa de las tribus de Israel (fácil)
+    </mat-option>
+    <mat-option value="29511094-division_de.html">
+      Palestina en tiempo de Jesús (fácil)
+    </mat-option>
+    <mat-option value="29190132-rios_y_lagos_de_tierra_santa.html">
+      Montes, ríos y lagos de Tierra Santa (fácil)
+    </mat-option>
+    <mat-option value="29511094-division_de.html">
+      Palestina en tiempos de Jesús (fácil)
+    </mat-option>
+    <mat-option value="29513247-rios_y_lagos_de_tierra_santa.html">
+      Montes, ríos y lagos de Tierra Santa (Escrito)
+    </mat-option>
+    <mat-option value="29298410-mapa_de_las_tribus_de_israel.html">
+      Mapa de las tribus de Israel (Escrito)
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+@if (gameId) {
+  <iframe allow="fullscreen; autoplay; allow-top-navigation-by-user-activation"
+          allowfullscreen frameborder="0"
+          [src]="('https://www.educaplay.com/game/' + gameId) | safe: 'resourceUrl'"></iframe>
+}

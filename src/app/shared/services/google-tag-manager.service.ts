@@ -22,9 +22,7 @@ export class GoogleTagManager {
   }
 
   init() {
-    console.log(this.production)
     if (this.production) {
-      console.log('Init Google Tag Manager')
       const script = document.createElement('script');
       script.async = true;
       script.src = 'https://www.googletagmanager.com/gtag/js?id=' + environment.googleTagManagerId;

@@ -58,15 +58,16 @@ app-nav-pages ::ng-deep a {
 }
 
 .top-bar {
-  align-items: center;
   display: flex;
   align-items: stretch;
+  min-height: 64px;
 
   app-nav-pages {
     display: flex;
 
     ::ng-deep a {
       margin-right: 1em;
+      height: 100%;
 
       .mat-list-item-content {
         display: flex;
