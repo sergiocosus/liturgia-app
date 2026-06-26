@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 
 import {FormBuilder, FormGroup} from "@angular/forms";
-import {MassStructure} from "./classes/mass-structure";
 import {GoogleTagManager} from "./shared/services/google-tag-manager.service";
 import {Router} from "@angular/router";
 import {NavigationEnd} from "@angular/router";

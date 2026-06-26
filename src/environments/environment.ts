@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  googleTagManagerId: 'GTM-PQ9GKNRG'
+  googleTagManagerId: 'G-B1EXGK12LX'
 };
