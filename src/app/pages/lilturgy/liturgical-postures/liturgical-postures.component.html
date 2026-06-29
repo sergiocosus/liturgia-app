@@ -1,0 +1,40 @@
+<h2>Gestos y posturas corporales en la liturgia</h2>
+
+<h3>Introducción</h3>
+<p>"Los gestos y posturas corporales, tanto del sacerdote, del diácono y de los ministros, como del pueblo, deben
+  tender a que toda la celebración resplandezca por el noble decoro y por la sencillez, a que se comprenda el
+  significado verdadero y pleno de cada una se sus diversas partes y a que se favorezca la participación de todos."
+  <span>(IGMR 42)</span></p>
+
+<h4>¿Por qué es importante la uniformidad de las posturas?</h4>
+<p>
+  "Es signo de la unidad de los miembros de la comunidad cristiana congregados para la sagrada Liturgia: expresa y
+  promueve, en efecto, la intención y los sentimientos de los participantes."
+  <span>(IGMR 42)</span>
+</p>
+
+
+
+<h3>Actitudes litúrgicas más importantes</h3>
+
+@for (posture of postures; track posture.title){
+  <h3>{{posture.title}}</h3>
+  @if (posture.history) {
+    <h4>Historia</h4>
+    <p>{{posture.history}}</p>
+  }
+
+  <h4>Significado</h4>
+  <ul>
+    @for (meaning of posture.meanings; track meaning){
+      <li>{{meaning}}</li>
+    }
+  </ul>
+
+}
+
+<h3>Bibliografía</h3>
+<p>
+  Abad Ibáñez, J. A., & Garrido Bonaño, M. (1997). Iniciación a la liturgia de la Iglesia (2. ed). Ed. Palabra.
+
+</p>

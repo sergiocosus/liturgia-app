@@ -18,8 +18,8 @@ const routes: Routes = [
         loadChildren: () => import('./pages/mass-page/mass-page.module').then(m => m.MassPageModule)
       },
       {
-        path: 'liturgical-objects',
-        loadChildren: () => import('./pages/liturgical-objects-page/liturgical-objects-page.module').then(m => m.LiturgicalObjectsPageModule)
+        path: 'liturgia/posturas',
+        loadComponent: () => import('./pages/lilturgy/liturgical-postures/liturgical-postures.component').then(m => m.LiturgicalPosturesComponent)
       },
       {
         path: 'biblia',

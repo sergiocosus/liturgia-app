@@ -5,6 +5,12 @@
   <mat-icon>menu_book</mat-icon>
   <span>Partes de la Misa</span>
 </a>
+<a mat-list-item routerLink="/liturgia/posturas" (click)="selected.emit()"
+   routerLinkActive="active"
+   [routerLinkActiveOptions]="{exact: true}">
+  <mat-icon>accessibility_new</mat-icon>
+  <span>Posturas litúrgicas</span>
+</a>
 <a mat-list-item routerLink="/biblia" (click)="selected.emit()"
    routerLinkActive="active"
    [routerLinkActiveOptions]="{exact: true}">
